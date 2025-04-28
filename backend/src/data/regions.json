@@ -1,0 +1,526 @@
+[
+  {
+    "code": "usa",
+    "name": "United States",
+    "regions": [
+      {
+        "id": "northeast",
+        "name": "Northeast",
+        "climateZone": "continental",
+        "subregions": ["New England", "Mid-Atlantic"],
+        "growingSeasons": {
+          "start": {
+            "month": 4,
+            "description": "Late April to early May"
+          },
+          "end": {
+            "month": 10,
+            "description": "Mid to late October"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -12,
+            "high": 5
+          },
+          "summer": {
+            "low": 15,
+            "high": 28
+          }
+        }
+      },
+      {
+        "id": "southeast",
+        "name": "Southeast",
+        "climateZone": "subtropical",
+        "subregions": ["South Atlantic", "East South Central", "West South Central"],
+        "growingSeasons": {
+          "start": {
+            "month": 3,
+            "description": "Early March to late March"
+          },
+          "end": {
+            "month": 11,
+            "description": "Early to mid November"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 0,
+            "high": 16
+          },
+          "summer": {
+            "low": 21,
+            "high": 33
+          }
+        }
+      },
+      {
+        "id": "midwest",
+        "name": "Midwest",
+        "climateZone": "continental",
+        "subregions": ["East North Central", "West North Central"],
+        "growingSeasons": {
+          "start": {
+            "month": 4,
+            "description": "Mid to late April"
+          },
+          "end": {
+            "month": 10,
+            "description": "Early to mid October"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -15,
+            "high": 2
+          },
+          "summer": {
+            "low": 15,
+            "high": 30
+          }
+        }
+      },
+      {
+        "id": "southwest",
+        "name": "Southwest",
+        "climateZone": "arid",
+        "subregions": ["Mountain", "Desert"],
+        "growingSeasons": {
+          "start": {
+            "month": 2,
+            "description": "February in lower elevations"
+          },
+          "end": {
+            "month": 11,
+            "description": "November in lower elevations"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -5,
+            "high": 15
+          },
+          "summer": {
+            "low": 18,
+            "high": 38
+          }
+        }
+      },
+      {
+        "id": "west-coast",
+        "name": "West Coast",
+        "climateZone": "mediterranean",
+        "subregions": ["Pacific Coast"],
+        "growingSeasons": {
+          "start": {
+            "month": 3,
+            "description": "Early to mid March"
+          },
+          "end": {
+            "month": 11,
+            "description": "Mid to late November"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 5,
+            "high": 15
+          },
+          "summer": {
+            "low": 12,
+            "high": 25
+          }
+        }
+      },
+      {
+        "id": "pacific-northwest",
+        "name": "Pacific Northwest",
+        "climateZone": "oceanic",
+        "subregions": ["Northwest Pacific Coast"],
+        "growingSeasons": {
+          "start": {
+            "month": 4,
+            "description": "Early to mid April"
+          },
+          "end": {
+            "month": 10,
+            "description": "Mid to late October"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 0,
+            "high": 8
+          },
+          "summer": {
+            "low": 10,
+            "high": 24
+          }
+        }
+      }
+    ]
+  },
+  {
+    "code": "canada",
+    "name": "Canada",
+    "regions": [
+      {
+        "id": "british-columbia",
+        "name": "British Columbia",
+        "climateZone": "oceanic",
+        "subregions": ["Coastal BC", "Interior BC"],
+        "growingSeasons": {
+          "start": {
+            "month": 4,
+            "description": "April to May"
+          },
+          "end": {
+            "month": 10,
+            "description": "September to October"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -5,
+            "high": 5
+          },
+          "summer": {
+            "low": 10,
+            "high": 22
+          }
+        }
+      },
+      {
+        "id": "alberta",
+        "name": "Alberta",
+        "climateZone": "continental",
+        "subregions": ["Southern Alberta", "Northern Alberta"],
+        "growingSeasons": {
+          "start": {
+            "month": 5,
+            "description": "Mid May to early June"
+          },
+          "end": {
+            "month": 9,
+            "description": "Early to mid September"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -20,
+            "high": -5
+          },
+          "summer": {
+            "low": 10,
+            "high": 25
+          }
+        }
+      },
+      {
+        "id": "ontario",
+        "name": "Ontario",
+        "climateZone": "continental",
+        "subregions": ["Southern Ontario", "Northern Ontario"],
+        "growingSeasons": {
+          "start": {
+            "month": 5,
+            "description": "Early to mid May"
+          },
+          "end": {
+            "month": 10,
+            "description": "Early to mid October"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -15,
+            "high": 0
+          },
+          "summer": {
+            "low": 15,
+            "high": 27
+          }
+        }
+      },
+      {
+        "id": "quebec",
+        "name": "Quebec",
+        "climateZone": "continental",
+        "subregions": ["Southern Quebec", "Northern Quebec"],
+        "growingSeasons": {
+          "start": {
+            "month": 5,
+            "description": "Mid May to early June"
+          },
+          "end": {
+            "month": 9,
+            "description": "Mid to late September"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -20,
+            "high": -5
+          },
+          "summer": {
+            "low": 12,
+            "high": 25
+          }
+        }
+      }
+    ]
+  },
+  {
+    "code": "uk",
+    "name": "United Kingdom",
+    "regions": [
+      {
+        "id": "southern-england",
+        "name": "Southern England",
+        "climateZone": "oceanic",
+        "subregions": ["Southeast England", "Southwest England"],
+        "growingSeasons": {
+          "start": {
+            "month": 3,
+            "description": "Mid March to early April"
+          },
+          "end": {
+            "month": 10,
+            "description": "Early to mid October"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 0,
+            "high": 8
+          },
+          "summer": {
+            "low": 12,
+            "high": 22
+          }
+        }
+      },
+      {
+        "id": "northern-england",
+        "name": "Northern England",
+        "climateZone": "oceanic",
+        "subregions": ["Northeast England", "Northwest England"],
+        "growingSeasons": {
+          "start": {
+            "month": 4,
+            "description": "Early to mid April"
+          },
+          "end": {
+            "month": 9,
+            "description": "Mid to late September"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -2,
+            "high": 6
+          },
+          "summer": {
+            "low": 10,
+            "high": 20
+          }
+        }
+      },
+      {
+        "id": "scotland",
+        "name": "Scotland",
+        "climateZone": "oceanic",
+        "subregions": ["Highlands", "Lowlands"],
+        "growingSeasons": {
+          "start": {
+            "month": 4,
+            "description": "Late April to early May"
+          },
+          "end": {
+            "month": 9,
+            "description": "Early to mid September"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -3,
+            "high": 5
+          },
+          "summer": {
+            "low": 8,
+            "high": 18
+          }
+        }
+      }
+    ]
+  },
+  {
+    "code": "australia",
+    "name": "Australia",
+    "regions": [
+      {
+        "id": "new-south-wales",
+        "name": "New South Wales",
+        "climateZone": "subtropical",
+        "subregions": ["Coastal NSW", "Interior NSW"],
+        "growingSeasons": {
+          "start": {
+            "month": 9,
+            "description": "September to October (Southern Hemisphere spring)"
+          },
+          "end": {
+            "month": 4,
+            "description": "April to May (Southern Hemisphere autumn)"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 5,
+            "high": 17
+          },
+          "summer": {
+            "low": 15,
+            "high": 30
+          }
+        }
+      },
+      {
+        "id": "queensland",
+        "name": "Queensland",
+        "climateZone": "tropical",
+        "subregions": ["Coastal Queensland", "Interior Queensland"],
+        "growingSeasons": {
+          "start": {
+            "month": 8,
+            "description": "August to September (Southern Hemisphere winter/spring)"
+          },
+          "end": {
+            "month": 5,
+            "description": "May to June (Southern Hemisphere autumn/winter)"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 10,
+            "high": 25
+          },
+          "summer": {
+            "low": 20,
+            "high": 35
+          }
+        }
+      },
+      {
+        "id": "western-australia",
+        "name": "Western Australia",
+        "climateZone": "mediterranean",
+        "subregions": ["Southwest WA", "Interior WA"],
+        "growingSeasons": {
+          "start": {
+            "month": 9,
+            "description": "September to October (Southern Hemisphere spring)"
+          },
+          "end": {
+            "month": 4,
+            "description": "April to May (Southern Hemisphere autumn)"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 8,
+            "high": 18
+          },
+          "summer": {
+            "low": 15,
+            "high": 30
+          }
+        }
+      }
+    ]
+  },
+  {
+    "code": "spain",
+    "name": "Spain",
+    "regions": [
+      {
+        "id": "andalusia",
+        "name": "Andalusia",
+        "climateZone": "mediterranean",
+        "subregions": ["Coastal Andalusia", "Interior Andalusia"],
+        "growingSeasons": {
+          "start": {
+            "month": 2,
+            "description": "February to March"
+          },
+          "end": {
+            "month": 11,
+            "description": "October to November"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 5,
+            "high": 16
+          },
+          "summer": {
+            "low": 18,
+            "high": 35
+          }
+        }
+      },
+      {
+        "id": "catalonia",
+        "name": "Catalonia",
+        "climateZone": "mediterranean",
+        "subregions": ["Coastal Catalonia", "Interior Catalonia"],
+        "growingSeasons": {
+          "start": {
+            "month": 3,
+            "description": "March to April"
+          },
+          "end": {
+            "month": 10,
+            "description": "October to November"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 3,
+            "high": 14
+          },
+          "summer": {
+            "low": 18,
+            "high": 30
+          }
+        }
+      },
+      {
+        "id": "central-spain",
+        "name": "Central Spain",
+        "climateZone": "continental",
+        "subregions": ["Meseta Central"],
+        "growingSeasons": {
+          "start": {
+            "month": 4,
+            "description": "April to May"
+          },
+          "end": {
+            "month": 10,
+            "description": "September to October"
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 0,
+            "high": 10
+          },
+          "summer": {
+            "low": 15,
+            "high": 33
+          }
+        }
+      }
+    ]
+  }
+]

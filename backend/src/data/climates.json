@@ -1,0 +1,236 @@
+[
+  {
+    "id": "tropical",
+    "name": "Tropical",
+    "description": "Year-round warm temperatures with seasonal rainfall patterns. Average temperatures range from 20-35°C (68-95°F).",
+    "characteristics": {
+      "minTemp": 20,
+      "maxTemp": 35,
+      "annualRainfall": "1000-3000mm",
+      "growingSeason": "Year-round",
+      "humidity": "High"
+    },
+    "suitability": {
+      "tomatoes": "Medium",
+      "cucumbers": "High",
+      "bellPeppers": "High",
+      "eggplant": "High",
+      "hotPeppers": "Very high"
+    },
+    "challenges": [
+      "High disease pressure due to humidity",
+      "Intense rainfall can damage plants",
+      "Pest pressure year-round"
+    ],
+    "advantages": [
+      "Year-round growing season",
+      "Multiple harvests possible",
+      "Excellent for heat-loving crops"
+    ]
+  },
+  {
+    "id": "subtropical",
+    "name": "Subtropical",
+    "description": "Hot summers and mild winters with moderate rainfall. Average temperatures range from 10-32°C (50-90°F).",
+    "characteristics": {
+      "minTemp": 10,
+      "maxTemp": 32,
+      "annualRainfall": "600-1500mm",
+      "growingSeason": "Primary growing season spanning 9-10 months",
+      "humidity": "Moderate to High"
+    },
+    "suitability": {
+      "tomatoes": "High",
+      "cucumbers": "High",
+      "bellPeppers": "High",
+      "eggplant": "High",
+      "hotPeppers": "High"
+    },
+    "challenges": [
+      "Occasional frost in winter",
+      "Summer heat can cause blossom drop",
+      "Moderate disease pressure"
+    ],
+    "advantages": [
+      "Long growing season",
+      "Wide variety of suitable crops",
+      "Mild winters allow for cool-season crops"
+    ]
+  },
+  {
+    "id": "mediterranean",
+    "name": "Mediterranean",
+    "description": "Hot, dry summers and mild, wet winters. Average temperatures range from 5-30°C (41-86°F).",
+    "characteristics": {
+      "minTemp": 5,
+      "maxTemp": 30,
+      "annualRainfall": "400-800mm",
+      "growingSeason": "Spring and fall are primary growing seasons",
+      "humidity": "Low to Moderate"
+    },
+    "suitability": {
+      "tomatoes": "Very high",
+      "cucumbers": "High",
+      "bellPeppers": "High",
+      "eggplant": "High",
+      "hotPeppers": "High"
+    },
+    "challenges": [
+      "Water scarcity in summer",
+      "Winter frosts possible",
+      "Summer heat stress"
+    ],
+    "advantages": [
+      "Low humidity reduces disease pressure",
+      "High light intensity",
+      "Ideal for many vegetable crops"
+    ]
+  },
+  {
+    "id": "continental",
+    "name": "Continental",
+    "description": "Four distinct seasons with cold winters and warm summers. Average temperatures range from -15 to 25°C (5-77°F).",
+    "characteristics": {
+      "minTemp": -15,
+      "maxTemp": 25,
+      "annualRainfall": "500-1000mm",
+      "growingSeason": "Late spring to early fall (4-5 months)",
+      "humidity": "Moderate"
+    },
+    "suitability": {
+      "tomatoes": "Medium",
+      "cucumbers": "Medium",
+      "bellPeppers": "Medium",
+      "eggplant": "Low",
+      "hotPeppers": "Medium"
+    },
+    "challenges": [
+      "Short growing season",
+      "Late spring and early fall frosts",
+      "Large temperature fluctuations"
+    ],
+    "advantages": [
+      "Long summer days increase growth rates",
+      "Lower pest pressure",
+      "Cool nights can improve flavor in some crops"
+    ]
+  },
+  {
+    "id": "temperate",
+    "name": "Temperate",
+    "description": "Moderate temperatures with four distinct seasons. Average temperatures range from 0-22°C (32-72°F).",
+    "characteristics": {
+      "minTemp": 0,
+      "maxTemp": 22,
+      "annualRainfall": "700-1500mm",
+      "growingSeason": "Spring to fall (6-7 months)",
+      "humidity": "Moderate"
+    },
+    "suitability": {
+      "tomatoes": "Medium",
+      "cucumbers": "Medium",
+      "bellPeppers": "Medium",
+      "eggplant": "Low",
+      "hotPeppers": "Low"
+    },
+    "challenges": [
+      "Variable weather patterns",
+      "Limited warm period for heat-loving crops",
+      "Spring and fall frosts"
+    ],
+    "advantages": [
+      "Good rainfall distribution",
+      "Wide variety of crops can be grown",
+      "Moderate conditions with fewer extremes"
+    ]
+  },
+  {
+    "id": "oceanic",
+    "name": "Oceanic",
+    "description": "Mild temperatures with significant rainfall and cloud cover. Average temperatures range from 5-18°C (41-64°F).",
+    "characteristics": {
+      "minTemp": 5,
+      "maxTemp": 18,
+      "annualRainfall": "800-2000mm",
+      "growingSeason": "Spring to early fall (5-6 months)",
+      "humidity": "High"
+    },
+    "suitability": {
+      "tomatoes": "Low",
+      "cucumbers": "Medium",
+      "bellPeppers": "Low",
+      "eggplant": "Very low",
+      "hotPeppers": "Very low"
+    },
+    "challenges": [
+      "Limited sunlight hours",
+      "High disease pressure due to humidity",
+      "Cool temperatures limit heat-loving crops"
+    ],
+    "advantages": [
+      "Reliable rainfall",
+      "Fewer temperature extremes",
+      "Good for leafy greens and cool-season crops"
+    ]
+  },
+  {
+    "id": "arid",
+    "name": "Arid",
+    "description": "Very dry with hot days and cool nights. Average temperatures range from 0-40°C (32-104°F) with extreme variations.",
+    "characteristics": {
+      "minTemp": 0,
+      "maxTemp": 40,
+      "annualRainfall": "Less than 250mm",
+      "growingSeason": "Winter months in hot areas, summer in cooler regions",
+      "humidity": "Very Low"
+    },
+    "suitability": {
+      "tomatoes": "Medium (with irrigation)",
+      "cucumbers": "Low",
+      "bellPeppers": "Medium (with irrigation)",
+      "eggplant": "Medium (with irrigation)",
+      "hotPeppers": "High (with irrigation)"
+    },
+    "challenges": [
+      "Extreme water scarcity",
+      "High daytime temperatures",
+      "Soil salinity issues",
+      "Strong winds"
+    ],
+    "advantages": [
+      "Low disease pressure",
+      "High light intensity",
+      "Low humidity benefits certain crops"
+    ]
+  },
+  {
+    "id": "semiarid",
+    "name": "Semi-arid",
+    "description": "Low rainfall with hot summers and cool to cold winters. Average temperatures range from -5 to 35°C (23-95°F).",
+    "characteristics": {
+      "minTemp": -5,
+      "maxTemp": 35,
+      "annualRainfall": "250-500mm",
+      "growingSeason": "Spring and fall, with winter growing in warmer regions",
+      "humidity": "Low"
+    },
+    "suitability": {
+      "tomatoes": "Medium (with irrigation)",
+      "cucumbers": "Medium (with irrigation)",
+      "bellPeppers": "Medium (with irrigation)",
+      "eggplant": "Medium (with irrigation)",
+      "hotPeppers": "High (with irrigation)"
+    },
+    "challenges": [
+      "Water scarcity",
+      "High temperature fluctuations",
+      "Soil fertility issues",
+      "Wind exposure"
+    ],
+    "advantages": [
+      "Low disease pressure",
+      "High light intensity",
+      "Good for drought-tolerant and heat-loving crops"
+    ]
+  }
+]
