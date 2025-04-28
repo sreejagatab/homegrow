@@ -1,0 +1,176 @@
+.crop-profile {
+    padding: 20px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .crop-info {
+    flex: 1;
+  }
+  
+  .crop-info h3 {
+    margin-bottom: 5px;
+    color: var(--primary);
+    font-size: 24px;
+  }
+  
+  .scientific-name {
+    font-style: italic;
+    color: #777;
+    font-size: 16px;
+  }
+  
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .profile-section {
+    background-color: var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .profile-section h4 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+    font-size: 18px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .info-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .info-value {
+    font-size: 16px;
+  }
+  
+  .requirements-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .requirements-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .req-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .req-icon i {
+    font-size: 24px;
+    color: var(--primary);
+  }
+  
+  .req-icon span {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .tips-list {
+    list-style-position: inside;
+    margin-left: 10px;
+  }
+  
+  .tip-item {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .nutrition-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nutrition-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .nutrient {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nutrient-name {
+    font-weight: 600;
+  }
+  
+  .nutrient-value {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  
+  .varieties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .variety-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .variety-item h5 {
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .requirements-icons {
+      justify-content: center;
+    }
+    
+    .nutrition-highlights {
+      grid-template-columns: 1fr;
+    }
+    
+    .varieties-grid {
+      grid-template-columns: 1fr;
+    }
+  }

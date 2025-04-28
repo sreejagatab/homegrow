@@ -1,0 +1,338 @@
+.climate-zones-page {
+    padding: 20px 0;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .page-header h1 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 32px;
+  }
+  
+  .page-description {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .climate-map-section {
+    margin-bottom: 50px;
+  }
+  
+  .climate-map-section h2 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .climate-map {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .map-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .map-legend {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  .map-legend h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: var(--text);
+  }
+  
+  .legend-list {
+    list-style: none;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .color-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .tropical .color-indicator {
+    background-color: #d81b60;
+  }
+  
+  .subtropical .color-indicator {
+    background-color: #f06292;
+  }
+  
+  .mediterranean .color-indicator {
+    background-color: #ffb74d;
+  }
+  
+  .continental .color-indicator {
+    background-color: #aed581;
+  }
+  
+  .temperate .color-indicator {
+    background-color: #4caf50;
+  }
+  
+  .oceanic .color-indicator {
+    background-color: #4fc3f7;
+  }
+  
+  .arid .color-indicator {
+    background-color: #ffd54f;
+  }
+  
+  .semiarid .color-indicator {
+    background-color: #fff176;
+  }
+  
+  .climate-details-section {
+    margin-bottom: 50px;
+  }
+  
+  .climate-details-section h2 {
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .climate-zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  
+  .climate-zone-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #ccc;
+  }
+  
+  .tropical {
+    border-top-color: #d81b60;
+  }
+  
+  .subtropical {
+    border-top-color: #f06292;
+  }
+  
+  .mediterranean {
+    border-top-color: #ffb74d;
+  }
+  
+  .continental {
+    border-top-color: #aed581;
+  }
+  
+  .temperate {
+    border-top-color: #4caf50;
+  }
+  
+  .oceanic {
+    border-top-color: #4fc3f7;
+  }
+  
+  .arid {
+    border-top-color: #ffd54f;
+  }
+  
+  .semiarid {
+    border-top-color: #fff176;
+  }
+  
+  .climate-zone-card h3 {
+    color: var(--text);
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .zone-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #666;
+  }
+  
+  .zone-characteristics {
+    margin-bottom: 20px;
+  }
+  
+  .zone-characteristics h4,
+  .crop-suitability h4,
+  .zone-challenges h4 {
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+    font-size: 16px;
+  }
+  
+  .zone-characteristics ul,
+  .zone-challenges ul {
+    list-style-position: inside;
+    margin-left: 10px;
+  }
+  
+  .zone-characteristics li,
+  .zone-challenges li {
+    margin-bottom: 5px;
+  }
+  
+  .suitability-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    list-style: none;
+  }
+  
+  .suitability-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .suitability-very-high {
+    background-color: #e8f5e9 !important;
+    border-left: 3px solid #43a047;
+  }
+  
+  .suitability-high {
+    background-color: #f1f8e9 !important;
+    border-left: 3px solid #7cb342;
+  }
+  
+  .suitability-medium {
+    background-color: #fffde7 !important;
+    border-left: 3px solid #fdd835;
+  }
+  
+  .suitability-low {
+    background-color: #fff8e1 !important;
+    border-left: 3px solid #ffb300;
+  }
+  
+  .suitability-very-low {
+    background-color: #ffebee !important;
+    border-left: 3px solid #e53935;
+  }
+  
+  .climate-tips-section h2 {
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .tips-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .accordion-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .accordion-header {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .accordion-header h3 {
+    font-size: 18px;
+    color: var(--text);
+  }
+  
+  .accordion-icon {
+    font-size: 20px;
+    color: var(--primary);
+  }
+  
+  .accordion-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: white;
+  }
+  
+  .accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 20px;
+  }
+  
+  .accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+  }
+  
+  .tips-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .tips-category {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  
+  .tips-category h4 {
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .climate-zones-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .map-legend {
+      position: static;
+      max-width: 100%;
+      margin-top: 20px;
+    }
+    
+    .suitability-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .tips-categories {
+      grid-template-columns: 1fr;
+    }
+  }
