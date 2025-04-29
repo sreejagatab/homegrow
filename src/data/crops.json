@@ -1,0 +1,477 @@
+[
+  {
+    "id": "tomatoes",
+    "name": "Tomatoes",
+    "scientificName": "Solanum lycopersicum",
+    "image": "/images/crops/tomato.jpg",
+    "lifeCycle": "90-150 days from seed to harvest, depending on variety",
+    "growthPattern": "Indeterminate varieties continue producing throughout the season; determinate varieties produce a single harvest",
+    "baseYield": {
+      "min": 8,
+      "max": 12
+    },
+    "keyRequirements": "Full sun (6+ hours daily), consistent moisture, temperatures between 18-29°C (65-85°F)",
+    "timeToHarvest": "70-90 days after transplanting",
+    "harvestDuration": "6-12 weeks for indeterminate varieties",
+    "maintenanceLevel": "Medium to High (pruning, staking required)",
+    "spacing": {
+      "min": 40,
+      "max": 90
+    },
+    "seedStartWeeks": 6,
+    "protectedExtensionWeeks": 4,
+    "recommendedVarieties": {
+      "tropical": ["Heat Master", "Solar Fire", "Summer Set"],
+      "subtropical": ["Sun Gold", "Celebrity", "Roma"],
+      "mediterranean": ["San Marzano", "Brandywine", "Marmande"],
+      "continental": ["Early Girl", "Glacier", "Stupice"],
+      "temperate": ["Moneymaker", "Alicante", "Ailsa Craig"],
+      "oceanic": ["Latah", "Legend", "Oregon Spring"],
+      "arid": ["Heatwave II", "Phoenix", "Sunmaster"],
+      "semiarid": ["Punta Banda", "Porter", "Desert Fire"]
+    },
+    "beginnerTips": "Choose determinate/bush varieties for easier management. Use cages for support and mulch to conserve moisture.",
+    "advancedTips": "Try grafting tomatoes onto disease-resistant rootstocks and implement succession planting for continuous harvest.",
+    "risks": [
+      {
+        "category": "Temperature Extremes",
+        "description": "Temperatures below 10°C (50°F) or above 35°C (95°F) can cause blossom drop and reduce fruit set.",
+        "severity": "high",
+        "mitigation": "Use row covers or shade cloth depending on the temperature extreme. Consider heat-tolerant varieties in hot regions."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "High humidity increases risk of fungal diseases like early blight and late blight.",
+        "severity": "high",
+        "mitigation": "Maintain good air circulation, use drip irrigation, and apply organic fungicides preventatively in humid conditions."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Tomato hornworm, aphids, and whiteflies can reduce yields if not managed.",
+        "severity": "medium",
+        "mitigation": "Regularly inspect plants, use companion planting with basil or marigolds, and introduce beneficial insects."
+      }
+    ],
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [3, 4, 5, 9, 10],
+        "suitable": [2, 6, 8, 11],
+        "risky": [1, 7, 12]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [3, 4],
+        "suitable": [2, 5],
+        "risky": [1, 6]
+      },
+      "continental": {
+        "optimal": [4, 5],
+        "suitable": [3, 6],
+        "risky": [2, 7]
+      },
+      "oceanic": {
+        "optimal": [4, 5],
+        "suitable": [3, 6],
+        "risky": [2, 7]
+      },
+      "arid": {
+        "optimal": [10, 11, 12, 1, 2],
+        "suitable": [9, 3],
+        "risky": [8, 4]
+      },
+      "semiarid": {
+        "optimal": [10, 11, 12, 1],
+        "suitable": [9, 2],
+        "risky": [8, 3]
+      }
+    }
+  },
+  {
+    "id": "cucumbers",
+    "name": "Cucumbers",
+    "scientificName": "Cucumis sativus",
+    "image": "/images/crops/cucumber.jpg",
+    "lifeCycle": "50-70 days from seed to harvest",
+    "growthPattern": "Vining or bush varieties available; vining types can be trellised for space efficiency",
+    "baseYield": {
+      "min": 5,
+      "max": 8
+    },
+    "keyRequirements": "Full sun, warm soil (above 16°C/60°F), consistent moisture",
+    "timeToHarvest": "50-70 days after planting",
+    "harvestDuration": "4-8 weeks with regular harvesting",
+    "maintenanceLevel": "Medium (trellising for vining types)",
+    "spacing": {
+      "min": 30,
+      "max": 60
+    },
+    "seedStartWeeks": 3,
+    "protectedExtensionWeeks": 6,
+    "recommendedVarieties": {
+      "tropical": ["Poinsett 76", "Ashley", "Marketmore 76"],
+      "subtropical": ["Suyo Long", "Armenian", "Thai Green"],
+      "mediterranean": ["Beit Alpha", "Persian", "Socrates"],
+      "continental": ["Marketmore", "Straight Eight", "Spacemaster"],
+      "temperate": ["Telegraph Improved", "Burpless Tasty Green", "Passandra"],
+      "oceanic": ["Northern Pickling", "Little Leaf", "Ministro"],
+      "arid": ["Armenian", "Middle Eastern", "Beit Alpha"],
+      "semiarid": ["Ashley", "Poinsett 76", "Dasher II"]
+    },
+    "beginnerTips": "Choose bush varieties for containers and small spaces. Harvest frequently for continued production.",
+    "advancedTips": "Implement vertical growing techniques and alternate-day harvesting schedule for maximum yields.",
+    "risks": [
+      {
+        "category": "Temperature Sensitivity",
+        "description": "Growth stops below 15°C (59°F); bitter fruits may develop above 32°C (90°F).",
+        "severity": "high",
+        "mitigation": "Use plastic mulch to warm soil early in the season and provide afternoon shade in peak summer heat."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "Powdery mildew and downy mildew are common in humid conditions.",
+        "severity": "medium",
+        "mitigation": "Choose resistant varieties, maintain good airflow, and use preventative organic fungicides."
+      },
+      {
+        "category": "Pollination Issues",
+        "description": "Poor pollination can result in misshapen fruits.",
+        "severity": "medium",
+        "mitigation": "Plant pollinator-attracting flowers nearby or hand-pollinate flowers in enclosed environments."
+      }
+    ],
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [4, 5],
+        "suitable": [3, 6],
+        "risky": [2, 7]
+      },
+      "continental": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "temperate": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "oceanic": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "arid": {
+        "optimal": [1, 2, 10, 11],
+        "suitable": [3, 9, 12],
+        "risky": [4, 8]
+      },
+      "semiarid": {
+        "optimal": [1, 2, 10, 11],
+        "suitable": [3, 9, 12],
+        "risky": [4, 8]
+      }
+    }
+  },
+  {
+    "id": "bellPeppers",
+    "name": "Bell Peppers",
+    "scientificName": "Capsicum annuum",
+    "image": "/images/crops/bell-pepper.jpg",
+    "lifeCycle": "60-90 days from transplant to first harvest",
+    "growthPattern": "Compact bushy plants that may require staking when heavy with fruit",
+    "baseYield": {
+      "min": 3,
+      "max": 6
+    },
+    "keyRequirements": "Full sun, warm temperatures (21-29°C/70-85°F), moderate but consistent moisture",
+    "timeToHarvest": "60-90 days after transplanting",
+    "harvestDuration": "8-10 weeks with proper care",
+    "maintenanceLevel": "Medium (staking may be required)",
+    "spacing": {
+      "min": 30,
+      "max": 45
+    },
+    "seedStartWeeks": 8,
+    "protectedExtensionWeeks": 8,
+    "recommendedVarieties": {
+      "tropical": ["Aristotle", "California Wonder", "Cubanelle"],
+      "subtropical": ["King Arthur", "Big Bertha", "Sweet Sunrise"],
+      "mediterranean": ["Corno di Toro", "Marconi", "Sweet Italian"],
+      "continental": ["Ace", "New Ace", "Lady Bell"],
+      "temperate": ["Gypsy", "Orange Sun", "Sweet Chocolate"],
+      "oceanic": ["Olympus", "Early Sunsation", "King of the North"],
+      "arid": ["Desert Dawn", "Sweet Spot", "Baron"],
+      "semiarid": ["Valencia", "Jupiter", "Cabernet"]
+    },
+    "beginnerTips": "Start with compact varieties that don't require staking. Harvest at desired color stage – green is earliest.",
+    "advancedTips": "Prune to maintain 2-3 main stems for larger fruits and implement calcium supplementation for stronger cell walls.",
+    "risks": [
+      {
+        "category": "Temperature Sensitivity",
+        "description": "Flower drop occurs below 15°C (59°F) or above 32°C (90°F).",
+        "severity": "high",
+        "mitigation": "Use row covers for cold protection and shade cloth during heat waves. Avoid planting during extreme temperature periods."
+      },
+      {
+        "category": "Sunscald",
+        "description": "Direct intense sunlight can cause sunscald on fruits in very hot regions.",
+        "severity": "medium",
+        "mitigation": "Maintain healthy foliage coverage and consider partial shade in hottest regions during peak summer."
+      },
+      {
+        "category": "Pest Issues",
+        "description": "Aphids and spider mites are common in hot, dry conditions.",
+        "severity": "medium",
+        "mitigation": "Regular monitoring and occasional spraying with insecticidal soap. Maintain adequate humidity for mite prevention."
+      }
+    ],
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "subtropical": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [3, 4],
+        "suitable": [2, 5],
+        "risky": [1, 6]
+      },
+      "continental": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "temperate": {
+        "optimal": [4, 5],
+        "suitable": [3, 6],
+        "risky": [2, 7]
+      },
+      "oceanic": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "arid": {
+        "optimal": [1, 2, 10, 11],
+        "suitable": [3, 9, 12],
+        "risky": [4, 8]
+      },
+      "semiarid": {
+        "optimal": [1, 2, 11, 12],
+        "suitable": [3, 10],
+        "risky": [4, 9]
+      }
+    }
+  },
+  {
+    "id": "eggplant",
+    "name": "Eggplant",
+    "scientificName": "Solanum melongena",
+    "image": "/images/crops/eggplant.jpg",
+    "lifeCycle": "70-120 days from transplant to harvest",
+    "growthPattern": "Bushy plants with woody stems that require support when fruiting heavily",
+    "baseYield": {
+      "min": 3,
+      "max": 5
+    },
+    "keyRequirements": "High heat (21-32°C/70-90°F), full sun, consistent moisture",
+    "timeToHarvest": "70-85 days after transplanting",
+    "harvestDuration": "6-8 weeks with regular harvesting",
+    "maintenanceLevel": "Medium-high (staking and pruning required)",
+    "spacing": {
+      "min": 45,
+      "max": 60
+    },
+    "seedStartWeeks": 8,
+    "protectedExtensionWeeks": 6,
+    "recommendedVarieties": {
+      "tropical": ["Florida Market", "Long Purple", "Thai Long Green"],
+      "subtropical": ["Black Beauty", "Ichiban", "Fairy Tale"],
+      "mediterranean": ["Rosa Bianca", "Listada de Gandia", "Italian Pink"],
+      "continental": ["Early Midnight", "Millionaire", "Little Prince"],
+      "temperate": ["Bonica", "Diamond", "Gretel"],
+      "oceanic": ["Orient Express", "Ping Tung", "Machiaw"],
+      "arid": ["Ghost Buster", "Antigua", "Turkish Orange"],
+      "semiarid": ["Black Shine", "Galine", "Orient Express"]
+    },
+    "beginnerTips": "Choose smaller-fruited varieties for faster production. Harvest when skin is glossy for best flavor.",
+    "advancedTips": "Implement pruning to limit plants to 5-6 fruits at once for larger size. Use foil mulch to increase heat reflection.",
+    "risks": [
+      {
+        "category": "Cold Sensitivity",
+        "description": "Plants may stop growing below 15°C (59°F) and suffer damage below 10°C (50°F).",
+        "severity": "high",
+        "mitigation": "Wait until soil and air temperatures are consistently warm before planting. Use black plastic mulch to warm soil."
+      },
+      {
+        "category": "Pest Vulnerability",
+        "description": "Highly attractive to flea beetles, spider mites, and aphids.",
+        "severity": "high",
+        "mitigation": "Use floating row covers until plants are established. Regular spraying with neem oil can deter multiple pests."
+      },
+      {
+        "category": "Disease Risk",
+        "description": "Susceptible to verticillium wilt, especially in soil where related crops have grown.",
+        "severity": "medium",
+        "mitigation": "Implement crop rotation of at least 3 years. Choose resistant varieties when available."
+      }
+    ],
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "subtropical": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [3, 4],
+        "suitable": [2, 5],
+        "risky": [1, 6]
+      },
+      "continental": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "temperate": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "oceanic": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "arid": {
+        "optimal": [1, 2, 10, 11],
+        "suitable": [3, 9, 12],
+        "risky": [4, 8]
+      },
+      "semiarid": {
+        "optimal": [1, 2, 11, 12],
+        "suitable": [3, 10],
+        "risky": [4, 9]
+      }
+    }
+  },
+  {
+    "id": "hotPeppers",
+    "name": "Hot Peppers",
+    "scientificName": "Capsicum species",
+    "image": "/images/crops/hot-pepper.jpg",
+    "lifeCycle": "80-120 days from transplant to harvest, depending on variety",
+    "growthPattern": "Compact to medium-sized bushy plants",
+    "baseYield": {
+      "min": 1.5,
+      "max": 3
+    },
+    "keyRequirements": "Heat-loving (21-32°C/70-90°F), full sun, moderate water (less than bell peppers)",
+    "timeToHarvest": "80-100 days after transplanting",
+    "harvestDuration": "8-12 weeks with regular harvesting",
+    "maintenanceLevel": "Low to medium (minimal pruning)",
+    "spacing": {
+      "min": 30,
+      "max": 45
+    },
+    "seedStartWeeks": 8,
+    "protectedExtensionWeeks": 6,
+    "recommendedVarieties": {
+      "tropical": ["Habanero", "Scotch Bonnet", "Bird's Eye"],
+      "subtropical": ["Jalapeño", "Serrano", "Cayenne"],
+      "mediterranean": ["Calabrian", "Espelette", "Greek Pepperoncini"],
+      "continental": ["Hungarian Hot Wax", "Czech Black", "Bulgarian Carrot"],
+      "temperate": ["Fresno", "Anaheim", "Poblano"],
+      "oceanic": ["Early Jalapeño", "Cayenne Slim", "Hungarian Yellow Wax"],
+      "arid": ["Chiltepin", "Aji Amarillo", "De Arbol"],
+      "semiarid": ["Ancho", "Santa Fe", "Chimayo"]
+    },
+    "beginnerTips": "Start with milder varieties like jalapeño or poblano. Wear gloves when handling hot peppers.",
+    "advancedTips": "Try pruning flowers during early growth stage to encourage stronger plants and higher yields later.",
+    "risks": [
+      {
+        "category": "Temperature Requirements",
+        "description": "Slow growth below 18°C (65°F); may drop flowers in extreme heat >35°C (95°F).",
+        "severity": "medium",
+        "mitigation": "Wait until temperatures are consistently warm before planting. Provide afternoon shade in hottest regions."
+      },
+      {
+        "category": "Cross-Pollination",
+        "description": "Different hot pepper varieties can cross-pollinate, affecting next generation's heat level.",
+        "severity": "low",
+        "mitigation": "Separate different pepper varieties by at least 50 feet or use barriers if saving seeds."
+      },
+      {
+        "category": "Moisture Balance",
+        "description": "Overwatering can lead to root diseases; underwatering may cause blossom end rot.",
+        "severity": "medium",
+        "mitigation": "Allow soil to dry slightly between waterings. Use consistent watering schedule and mulch to maintain even moisture."
+      }
+    ],
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "subtropical": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [3, 4],
+        "suitable": [2, 5],
+        "risky": [1, 6]
+      },
+      "continental": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "temperate": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "oceanic": {
+        "optimal": [5, 6],
+        "suitable": [4, 7],
+        "risky": [3, 8]
+      },
+      "arid": {
+        "optimal": [1, 2, 10, 11],
+        "suitable": [3, 9, 12],
+        "risky": [4, 8]
+      },
+      "semiarid": {
+        "optimal": [1, 2, 11, 12],
+        "suitable": [3, 10],
+        "risky": [4, 9]
+      }
+    }
+  }
+]

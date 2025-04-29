@@ -7,15 +7,84 @@
         "id": "northeast",
         "name": "Northeast",
         "climateZone": "continental",
-        "subregions": ["New England", "Mid-Atlantic"],
-        "growingSeasons": {
-          "start": {
-            "month": 4,
-            "description": "Late April to early May"
+        "subregions": [
+          {
+            "id": "new-england",
+            "name": "New England",
+            "description": "Northern region with varied terrain and four distinct seasons",
+            "soilTypes": ["Glacial Till", "Sandy Loam", "Clay Loam"],
+            "elevation": {
+              "min": 0,
+              "max": 1500,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 900,
+                "max": 1300,
+                "unit": "mm"
+              },
+              "pattern": "Evenly distributed throughout the year with winter snow",
+              "distribution": [
+                {"month": 1, "mm": 90},
+                {"month": 2, "mm": 80},
+                {"month": 3, "mm": 100},
+                {"month": 4, "mm": 100},
+                {"month": 5, "mm": 100},
+                {"month": 6, "mm": 90},
+                {"month": 7, "mm": 90},
+                {"month": 8, "mm": 90},
+                {"month": 9, "mm": 100},
+                {"month": 10, "mm": 110},
+                {"month": 11, "mm": 110},
+                {"month": 12, "mm": 100}
+              ]
+            }
           },
-          "end": {
-            "month": 10,
-            "description": "Mid to late October"
+          {
+            "id": "mid-atlantic",
+            "name": "Mid-Atlantic",
+            "description": "Coastal and inland areas with varied topography",
+            "soilTypes": ["Coastal Plain", "Piedmont", "Appalachian"],
+            "elevation": {
+              "min": 0,
+              "max": 1000,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 1000,
+                "max": 1200,
+                "unit": "mm"
+              },
+              "pattern": "Evenly distributed throughout the year",
+              "distribution": [
+                {"month": 1, "mm": 80},
+                {"month": 2, "mm": 70},
+                {"month": 3, "mm": 90},
+                {"month": 4, "mm": 90},
+                {"month": 5, "mm": 100},
+                {"month": 6, "mm": 100},
+                {"month": 7, "mm": 110},
+                {"month": 8, "mm": 100},
+                {"month": 9, "mm": 100},
+                {"month": 10, "mm": 90},
+                {"month": 11, "mm": 90},
+                {"month": 12, "mm": 90}
+              ]
+            }
+          }
+        ],
+        "growingSeasons": {
+          "primary": {
+            "start": {
+              "month": 4,
+              "description": "Late April to early May"
+            },
+            "end": {
+              "month": 10,
+              "description": "Mid to late October"
+            }
           }
         },
         "averageTemperatures": {
@@ -27,21 +96,140 @@
             "low": 15,
             "high": 28
           }
+        },
+        "extremeWeatherEvents": {
+          "blizzards": {
+            "frequency": "Annual",
+            "severity": "Moderate to High",
+            "timing": "December to March"
+          },
+          "hurricanes": {
+            "frequency": "Occasional",
+            "severity": "Moderate to High",
+            "timing": "August to October"
+          },
+          "heatWaves": {
+            "frequency": "Annual",
+            "severity": "Moderate",
+            "timing": "July to August"
+          }
         }
       },
       {
         "id": "southeast",
         "name": "Southeast",
         "climateZone": "subtropical",
-        "subregions": ["South Atlantic", "East South Central", "West South Central"],
-        "growingSeasons": {
-          "start": {
-            "month": 3,
-            "description": "Early March to late March"
+        "subregions": [
+          {
+            "id": "south-atlantic",
+            "name": "South Atlantic",
+            "description": "Coastal plains and piedmont regions with humid subtropical climate",
+            "soilTypes": ["Coastal Plain", "Piedmont", "Sandy Loam"],
+            "elevation": {
+              "min": 0,
+              "max": 500,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 1200,
+                "max": 1600,
+                "unit": "mm"
+              },
+              "pattern": "Summer thunderstorms with year-round precipitation",
+              "distribution": [
+                {"month": 1, "mm": 90},
+                {"month": 2, "mm": 90},
+                {"month": 3, "mm": 110},
+                {"month": 4, "mm": 90},
+                {"month": 5, "mm": 100},
+                {"month": 6, "mm": 130},
+                {"month": 7, "mm": 170},
+                {"month": 8, "mm": 170},
+                {"month": 9, "mm": 130},
+                {"month": 10, "mm": 90},
+                {"month": 11, "mm": 80},
+                {"month": 12, "mm": 90}
+              ]
+            }
           },
-          "end": {
-            "month": 11,
-            "description": "Early to mid November"
+          {
+            "id": "east-south-central",
+            "name": "East South Central",
+            "description": "Interior region with hills, plateaus, and river valleys",
+            "soilTypes": ["Alluvial", "Clay", "Limestone-derived"],
+            "elevation": {
+              "min": 50,
+              "max": 800,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 1100,
+                "max": 1500,
+                "unit": "mm"
+              },
+              "pattern": "Relatively even distribution with spring peak",
+              "distribution": [
+                {"month": 1, "mm": 120},
+                {"month": 2, "mm": 110},
+                {"month": 3, "mm": 130},
+                {"month": 4, "mm": 120},
+                {"month": 5, "mm": 130},
+                {"month": 6, "mm": 110},
+                {"month": 7, "mm": 120},
+                {"month": 8, "mm": 90},
+                {"month": 9, "mm": 100},
+                {"month": 10, "mm": 80},
+                {"month": 11, "mm": 110},
+                {"month": 12, "mm": 130}
+              ]
+            }
+          },
+          {
+            "id": "west-south-central",
+            "name": "West South Central",
+            "description": "Transition zone from humid subtropical to semi-arid",
+            "soilTypes": ["Clay", "Prairie", "Alluvial"],
+            "elevation": {
+              "min": 0,
+              "max": 500,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 600,
+                "max": 1200,
+                "unit": "mm"
+              },
+              "pattern": "Spring and fall peaks with drier summers",
+              "distribution": [
+                {"month": 1, "mm": 70},
+                {"month": 2, "mm": 70},
+                {"month": 3, "mm": 80},
+                {"month": 4, "mm": 100},
+                {"month": 5, "mm": 130},
+                {"month": 6, "mm": 100},
+                {"month": 7, "mm": 70},
+                {"month": 8, "mm": 70},
+                {"month": 9, "mm": 90},
+                {"month": 10, "mm": 100},
+                {"month": 11, "mm": 90},
+                {"month": 12, "mm": 80}
+              ]
+            }
+          }
+        ],
+        "growingSeasons": {
+          "primary": {
+            "start": {
+              "month": 3,
+              "description": "Early March to late March"
+            },
+            "end": {
+              "month": 11,
+              "description": "Early to mid November"
+            }
           }
         },
         "averageTemperatures": {
@@ -52,6 +240,28 @@
           "summer": {
             "low": 21,
             "high": 33
+          }
+        },
+        "extremeWeatherEvents": {
+          "hurricanes": {
+            "frequency": "Annual",
+            "severity": "Moderate to High",
+            "timing": "June to November"
+          },
+          "tornadoes": {
+            "frequency": "Seasonal",
+            "severity": "Moderate to High",
+            "timing": "March to May"
+          },
+          "flooding": {
+            "frequency": "Occasional",
+            "severity": "Moderate",
+            "timing": "Year-round"
+          },
+          "droughts": {
+            "frequency": "Every 3-5 years",
+            "severity": "Moderate",
+            "timing": "Summer"
           }
         }
       },
@@ -518,6 +728,486 @@
           "summer": {
             "low": 15,
             "high": 33
+          }
+        }
+      }
+    ]
+  }
+,
+  {
+    "code": "india",
+    "name": "India",
+    "regions": [
+      {
+        "id": "northern-plains",
+        "name": "Northern Plains",
+        "climateZone": "subtropical",
+        "subregions": [
+          {
+            "id": "punjab-haryana",
+            "name": "Punjab & Haryana",
+            "description": "Fertile alluvial plains with intensive agriculture",
+            "soilTypes": ["Alluvial", "Loamy"],
+            "elevation": {
+              "min": 200,
+              "max": 500,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 400,
+                "max": 800,
+                "unit": "mm"
+              },
+              "pattern": "Monsoon dominant (July-September)",
+              "distribution": [
+                {"month": 1, "mm": 20},
+                {"month": 2, "mm": 25},
+                {"month": 3, "mm": 15},
+                {"month": 4, "mm": 10},
+                {"month": 5, "mm": 15},
+                {"month": 6, "mm": 50},
+                {"month": 7, "mm": 150},
+                {"month": 8, "mm": 180},
+                {"month": 9, "mm": 120},
+                {"month": 10, "mm": 30},
+                {"month": 11, "mm": 10},
+                {"month": 12, "mm": 15}
+              ]
+            }
+          },
+          {
+            "id": "uttar-pradesh",
+            "name": "Uttar Pradesh",
+            "description": "Gangetic plains with diverse agricultural practices",
+            "soilTypes": ["Alluvial", "Clay Loam"],
+            "elevation": {
+              "min": 100,
+              "max": 300,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 600,
+                "max": 1000,
+                "unit": "mm"
+              },
+              "pattern": "Monsoon dominant with some winter precipitation",
+              "distribution": [
+                {"month": 1, "mm": 25},
+                {"month": 2, "mm": 20},
+                {"month": 3, "mm": 15},
+                {"month": 4, "mm": 10},
+                {"month": 5, "mm": 20},
+                {"month": 6, "mm": 70},
+                {"month": 7, "mm": 200},
+                {"month": 8, "mm": 250},
+                {"month": 9, "mm": 150},
+                {"month": 10, "mm": 40},
+                {"month": 11, "mm": 10},
+                {"month": 12, "mm": 15}
+              ]
+            }
+          }
+        ],
+        "growingSeasons": {
+          "primary": {
+            "start": {
+              "month": 6,
+              "description": "June to July (Kharif season)"
+            },
+            "end": {
+              "month": 10,
+              "description": "October to November"
+            }
+          },
+          "secondary": {
+            "start": {
+              "month": 11,
+              "description": "November to December (Rabi season)"
+            },
+            "end": {
+              "month": 3,
+              "description": "March to April"
+            }
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 5,
+            "high": 20
+          },
+          "summer": {
+            "low": 25,
+            "high": 40
+          }
+        },
+        "extremeWeatherEvents": {
+          "heatWaves": {
+            "frequency": "Annual",
+            "severity": "High",
+            "timing": "April to June"
+          },
+          "coldSnaps": {
+            "frequency": "Annual",
+            "severity": "Moderate",
+            "timing": "December to January"
+          },
+          "flooding": {
+            "frequency": "Occasional",
+            "severity": "Moderate to High",
+            "timing": "July to September"
+          }
+        }
+      },
+      {
+        "id": "deccan-plateau",
+        "name": "Deccan Plateau",
+        "climateZone": "semiarid",
+        "subregions": [
+          {
+            "id": "maharashtra-plateau",
+            "name": "Maharashtra Plateau",
+            "description": "Elevated plateau with black cotton soils",
+            "soilTypes": ["Black Cotton (Regur)", "Red Lateritic"],
+            "elevation": {
+              "min": 300,
+              "max": 900,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 400,
+                "max": 700,
+                "unit": "mm"
+              },
+              "pattern": "Monsoon dependent with dry winters",
+              "distribution": [
+                {"month": 1, "mm": 5},
+                {"month": 2, "mm": 5},
+                {"month": 3, "mm": 10},
+                {"month": 4, "mm": 15},
+                {"month": 5, "mm": 20},
+                {"month": 6, "mm": 100},
+                {"month": 7, "mm": 150},
+                {"month": 8, "mm": 130},
+                {"month": 9, "mm": 120},
+                {"month": 10, "mm": 60},
+                {"month": 11, "mm": 20},
+                {"month": 12, "mm": 10}
+              ]
+            }
+          },
+          {
+            "id": "karnataka-plateau",
+            "name": "Karnataka Plateau",
+            "description": "Varied terrain with red and black soils",
+            "soilTypes": ["Red Soil", "Black Soil", "Laterite"],
+            "elevation": {
+              "min": 450,
+              "max": 900,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 500,
+                "max": 800,
+                "unit": "mm"
+              },
+              "pattern": "Southwest and Northeast monsoons",
+              "distribution": [
+                {"month": 1, "mm": 5},
+                {"month": 2, "mm": 5},
+                {"month": 3, "mm": 10},
+                {"month": 4, "mm": 30},
+                {"month": 5, "mm": 60},
+                {"month": 6, "mm": 80},
+                {"month": 7, "mm": 110},
+                {"month": 8, "mm": 100},
+                {"month": 9, "mm": 150},
+                {"month": 10, "mm": 120},
+                {"month": 11, "mm": 40},
+                {"month": 12, "mm": 10}
+              ]
+            }
+          }
+        ],
+        "growingSeasons": {
+          "primary": {
+            "start": {
+              "month": 6,
+              "description": "June to July (Kharif season)"
+            },
+            "end": {
+              "month": 10,
+              "description": "October to November"
+            }
+          },
+          "secondary": {
+            "start": {
+              "month": 11,
+              "description": "November to December (Rabi season)"
+            },
+            "end": {
+              "month": 3,
+              "description": "February to March"
+            }
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 10,
+            "high": 28
+          },
+          "summer": {
+            "low": 20,
+            "high": 38
+          }
+        },
+        "extremeWeatherEvents": {
+          "heatWaves": {
+            "frequency": "Annual",
+            "severity": "High",
+            "timing": "March to May"
+          },
+          "droughts": {
+            "frequency": "Every 3-5 years",
+            "severity": "High",
+            "timing": "Variable"
+          }
+        }
+      },
+      {
+        "id": "coastal-regions",
+        "name": "Coastal Regions",
+        "climateZone": "tropical",
+        "subregions": [
+          {
+            "id": "kerala-coast",
+            "name": "Kerala Coast",
+            "description": "Tropical coastal strip with high rainfall",
+            "soilTypes": ["Laterite", "Alluvial", "Sandy Loam"],
+            "elevation": {
+              "min": 0,
+              "max": 100,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 2500,
+                "max": 3500,
+                "unit": "mm"
+              },
+              "pattern": "Southwest monsoon dominant with year-round rainfall",
+              "distribution": [
+                {"month": 1, "mm": 20},
+                {"month": 2, "mm": 30},
+                {"month": 3, "mm": 60},
+                {"month": 4, "mm": 110},
+                {"month": 5, "mm": 200},
+                {"month": 6, "mm": 650},
+                {"month": 7, "mm": 750},
+                {"month": 8, "mm": 550},
+                {"month": 9, "mm": 300},
+                {"month": 10, "mm": 270},
+                {"month": 11, "mm": 150},
+                {"month": 12, "mm": 50}
+              ]
+            }
+          },
+          {
+            "id": "tamil-nadu-coast",
+            "name": "Tamil Nadu Coast",
+            "description": "Eastern coastal region with northeast monsoon influence",
+            "soilTypes": ["Red Loamy", "Alluvial", "Coastal Sandy"],
+            "elevation": {
+              "min": 0,
+              "max": 100,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 800,
+                "max": 1200,
+                "unit": "mm"
+              },
+              "pattern": "Northeast monsoon dominant (October-December)",
+              "distribution": [
+                {"month": 1, "mm": 20},
+                {"month": 2, "mm": 10},
+                {"month": 3, "mm": 15},
+                {"month": 4, "mm": 30},
+                {"month": 5, "mm": 40},
+                {"month": 6, "mm": 60},
+                {"month": 7, "mm": 90},
+                {"month": 8, "mm": 110},
+                {"month": 9, "mm": 120},
+                {"month": 10, "mm": 250},
+                {"month": 11, "mm": 300},
+                {"month": 12, "mm": 150}
+              ]
+            }
+          }
+        ],
+        "growingSeasons": {
+          "primary": {
+            "start": {
+              "month": 6,
+              "description": "June to July"
+            },
+            "end": {
+              "month": 9,
+              "description": "September to October"
+            }
+          },
+          "secondary": {
+            "start": {
+              "month": 10,
+              "description": "October to November"
+            },
+            "end": {
+              "month": 2,
+              "description": "February to March"
+            }
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": 20,
+            "high": 30
+          },
+          "summer": {
+            "low": 25,
+            "high": 35
+          }
+        },
+        "extremeWeatherEvents": {
+          "cyclones": {
+            "frequency": "Annual",
+            "severity": "Moderate to High",
+            "timing": "October to December"
+          },
+          "flooding": {
+            "frequency": "Annual",
+            "severity": "Moderate to High",
+            "timing": "Monsoon season"
+          }
+        }
+      },
+      {
+        "id": "himalayan-region",
+        "name": "Himalayan Region",
+        "climateZone": "temperate",
+        "subregions": [
+          {
+            "id": "himachal-pradesh",
+            "name": "Himachal Pradesh",
+            "description": "Mountainous terrain with temperate valleys",
+            "soilTypes": ["Mountain Soil", "Brown Forest", "Podzolic"],
+            "elevation": {
+              "min": 500,
+              "max": 3000,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 1000,
+                "max": 2500,
+                "unit": "mm"
+              },
+              "pattern": "Winter snow and summer monsoon",
+              "distribution": [
+                {"month": 1, "mm": 100},
+                {"month": 2, "mm": 120},
+                {"month": 3, "mm": 100},
+                {"month": 4, "mm": 70},
+                {"month": 5, "mm": 60},
+                {"month": 6, "mm": 100},
+                {"month": 7, "mm": 250},
+                {"month": 8, "mm": 300},
+                {"month": 9, "mm": 150},
+                {"month": 10, "mm": 50},
+                {"month": 11, "mm": 30},
+                {"month": 12, "mm": 60}
+              ]
+            }
+          },
+          {
+            "id": "uttarakhand",
+            "name": "Uttarakhand",
+            "description": "Varied terrain from foothills to high mountains",
+            "soilTypes": ["Mountain Soil", "Alluvial", "Brown Forest"],
+            "elevation": {
+              "min": 300,
+              "max": 3500,
+              "unit": "meters"
+            },
+            "precipitation": {
+              "annual": {
+                "min": 1200,
+                "max": 2800,
+                "unit": "mm"
+              },
+              "pattern": "Winter snow and summer monsoon",
+              "distribution": [
+                {"month": 1, "mm": 80},
+                {"month": 2, "mm": 100},
+                {"month": 3, "mm": 80},
+                {"month": 4, "mm": 50},
+                {"month": 5, "mm": 70},
+                {"month": 6, "mm": 150},
+                {"month": 7, "mm": 350},
+                {"month": 8, "mm": 400},
+                {"month": 9, "mm": 200},
+                {"month": 10, "mm": 60},
+                {"month": 11, "mm": 20},
+                {"month": 12, "mm": 40}
+              ]
+            }
+          }
+        ],
+        "growingSeasons": {
+          "primary": {
+            "start": {
+              "month": 3,
+              "description": "March to April"
+            },
+            "end": {
+              "month": 10,
+              "description": "September to October"
+            }
+          },
+          "secondary": {
+            "start": {
+              "month": 11,
+              "description": "November (limited to lower elevations)"
+            },
+            "end": {
+              "month": 2,
+              "description": "February"
+            }
+          }
+        },
+        "averageTemperatures": {
+          "winter": {
+            "low": -5,
+            "high": 15
+          },
+          "summer": {
+            "low": 10,
+            "high": 30
+          }
+        },
+        "extremeWeatherEvents": {
+          "snowfall": {
+            "frequency": "Annual",
+            "severity": "Moderate to High",
+            "timing": "December to February"
+          },
+          "landslides": {
+            "frequency": "Annual",
+            "severity": "Moderate to High",
+            "timing": "Monsoon season"
           }
         }
       }

@@ -6,7 +6,14 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "jest"
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch --runInBand",
+    "test:coverage": "jest --coverage --runInBand",
+    "server:start": "node server-manager.js start",
+    "server:stop": "node server-manager.js stop",
+    "server:restart": "node server-manager.js restart",
+    "server:status": "node server-manager.js status",
+    "setup": "node setup.js"
   },
   "dependencies": {
     "axios": "^1.4.0",
@@ -22,6 +29,7 @@
   },
   "devDependencies": {
     "jest": "^29.6.2",
+    "mongodb-memory-server": "^10.1.4",
     "nodemon": "^3.0.1",
     "supertest": "^6.3.3"
   }

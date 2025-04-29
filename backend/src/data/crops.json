@@ -4,71 +4,50 @@
     "name": "Tomatoes",
     "scientificName": "Solanum lycopersicum",
     "image": "/images/crops/tomato.jpg",
-    "lifeCycle": "90-150 days from seed to harvest, depending on variety",
-    "growthPattern": "Indeterminate varieties continue producing throughout the season; determinate varieties produce a single harvest",
+    "lifeCycle": "Annual",
+    "growthPattern": "Determinate or Indeterminate",
     "baseYield": {
-      "min": 8,
-      "max": 12
+      "min": 3.5,
+      "max": 7.0
     },
-    "keyRequirements": "Full sun (6+ hours daily), consistent moisture, temperatures between 18-29°C (65-85°F)",
-    "timeToHarvest": "70-90 days after transplanting",
-    "harvestDuration": "6-12 weeks for indeterminate varieties",
-    "maintenanceLevel": "Medium to High (pruning, staking required)",
+    "timeToHarvest": {
+      "min": 60,
+      "max": 85
+    },
+    "harvestDuration": {
+      "min": 4,
+      "max": 8
+    },
+    "maintenanceLevel": "Moderate",
+    "keyRequirements": "Full sun, consistent moisture, and well-drained soil. Requires staking or caging for support.",
     "spacing": {
-      "min": 40,
+      "min": 45,
       "max": 90
     },
     "seedStartWeeks": 6,
     "protectedExtensionWeeks": 4,
-    "recommendedVarieties": {
-      "tropical": ["Heat Master", "Solar Fire", "Summer Set"],
-      "subtropical": ["Sun Gold", "Celebrity", "Roma"],
-      "mediterranean": ["San Marzano", "Brandywine", "Marmande"],
-      "continental": ["Early Girl", "Glacier", "Stupice"],
-      "temperate": ["Moneymaker", "Alicante", "Ailsa Craig"],
-      "oceanic": ["Latah", "Legend", "Oregon Spring"],
-      "arid": ["Heatwave II", "Phoenix", "Sunmaster"],
-      "semiarid": ["Punta Banda", "Porter", "Desert Fire"]
-    },
-    "beginnerTips": "Choose determinate/bush varieties for easier management. Use cages for support and mulch to conserve moisture.",
-    "advancedTips": "Try grafting tomatoes onto disease-resistant rootstocks and implement succession planting for continuous harvest.",
-    "risks": [
-      {
-        "category": "Temperature Extremes",
-        "description": "Temperatures below 10°C (50°F) or above 35°C (95°F) can cause blossom drop and reduce fruit set.",
-        "severity": "high",
-        "mitigation": "Use row covers or shade cloth depending on the temperature extreme. Consider heat-tolerant varieties in hot regions."
-      },
-      {
-        "category": "Disease Pressure",
-        "description": "High humidity increases risk of fungal diseases like early blight and late blight.",
-        "severity": "high",
-        "mitigation": "Maintain good air circulation, use drip irrigation, and apply organic fungicides preventatively in humid conditions."
-      },
-      {
-        "category": "Pest Challenges",
-        "description": "Tomato hornworm, aphids, and whiteflies can reduce yields if not managed.",
-        "severity": "medium",
-        "mitigation": "Regularly inspect plants, use companion planting with basil or marigolds, and introduce beneficial insects."
-      }
-    ],
     "plantingMonths": {
       "tropical": {
-        "optimal": [3, 4, 5, 9, 10],
-        "suitable": [2, 6, 8, 11],
-        "risky": [1, 7, 12]
+        "optimal": [9, 10, 11],
+        "suitable": [8, 12],
+        "risky": [7, 1]
       },
       "subtropical": {
-        "optimal": [3, 4, 9, 10],
-        "suitable": [2, 5, 8, 11],
-        "risky": [1, 6, 7, 12]
+        "optimal": [3, 4, 5],
+        "suitable": [2, 6],
+        "risky": [1, 7]
       },
       "mediterranean": {
-        "optimal": [3, 4],
-        "suitable": [2, 5],
-        "risky": [1, 6]
+        "optimal": [4, 5],
+        "suitable": [3, 6],
+        "risky": [2, 7]
       },
       "continental": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "temperate": {
         "optimal": [4, 5],
         "suitable": [3, 6],
         "risky": [2, 7]
@@ -79,80 +58,92 @@
         "risky": [2, 7]
       },
       "arid": {
-        "optimal": [10, 11, 12, 1, 2],
-        "suitable": [9, 3],
-        "risky": [8, 4]
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
       },
       "semiarid": {
-        "optimal": [10, 11, 12, 1],
-        "suitable": [9, 2],
-        "risky": [8, 3]
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
       }
-    }
+    },
+    "recommendedVarieties": {
+      "tropical": ["Heat Master", "Solar Fire", "Heatwave II"],
+      "subtropical": ["Better Boy", "Celebrity", "Early Girl"],
+      "mediterranean": ["Roma", "San Marzano", "Brandywine"],
+      "continental": ["Glacier", "Stupice", "Manitoba"],
+      "temperate": ["Moneymaker", "Gardener's Delight", "Alicante"],
+      "oceanic": ["Sungold", "Matina", "Stupice"],
+      "arid": ["Phoenix", "Heatmaster", "Sunmaster"],
+      "semiarid": ["Roma", "Ponderosa", "Cherokee Purple"]
+    },
+    "beginnerTips": "Start with determinate varieties which are more compact and easier to manage. Ensure consistent watering to prevent blossom end rot.",
+    "advancedTips": "Try grafting tomato plants onto disease-resistant rootstock. Implement a strict pruning regimen for indeterminate varieties to maximize yield.",
+    "risks": [
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to blight, fusarium wilt, and verticillium wilt.",
+        "severity": "high",
+        "mitigation": "Choose resistant varieties, practice crop rotation, and avoid wetting foliage when watering."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to hornworms, aphids, and whiteflies.",
+        "severity": "medium",
+        "mitigation": "Monitor regularly for pests, introduce beneficial insects, and use organic insecticidal soap if needed."
+      },
+      {
+        "category": "Temperature Extremes",
+        "description": "Blossoms drop when temperatures exceed 35°C (95°F) or fall below 10°C (50°F).",
+        "severity": "medium",
+        "mitigation": "Use shade cloth during extreme heat and row covers for cool periods. Choose heat-tolerant varieties in hot climates."
+      },
+      {
+        "category": "Moisture Balance",
+        "description": "Inconsistent watering can cause blossom end rot and fruit splitting.",
+        "severity": "medium",
+        "mitigation": "Implement a regular watering schedule and use mulch to maintain soil moisture levels."
+      }
+    ]
   },
   {
     "id": "cucumbers",
     "name": "Cucumbers",
     "scientificName": "Cucumis sativus",
     "image": "/images/crops/cucumber.jpg",
-    "lifeCycle": "50-70 days from seed to harvest",
-    "growthPattern": "Vining or bush varieties available; vining types can be trellised for space efficiency",
+    "lifeCycle": "Annual",
+    "growthPattern": "Vining or Bush",
     "baseYield": {
-      "min": 5,
-      "max": 8
+      "min": 3.0,
+      "max": 6.0
     },
-    "keyRequirements": "Full sun, warm soil (above 16°C/60°F), consistent moisture",
-    "timeToHarvest": "50-70 days after planting",
-    "harvestDuration": "4-8 weeks with regular harvesting",
-    "maintenanceLevel": "Medium (trellising for vining types)",
+    "timeToHarvest": {
+      "min": 50,
+      "max": 70
+    },
+    "harvestDuration": {
+      "min": 3,
+      "max": 6
+    },
+    "maintenanceLevel": "Low to Moderate",
+    "keyRequirements": "Full sun, consistent moisture, and warm soil. Benefits from trellising for vining varieties.",
     "spacing": {
       "min": 30,
       "max": 60
     },
     "seedStartWeeks": 3,
-    "protectedExtensionWeeks": 6,
-    "recommendedVarieties": {
-      "tropical": ["Poinsett 76", "Ashley", "Marketmore 76"],
-      "subtropical": ["Suyo Long", "Armenian", "Thai Green"],
-      "mediterranean": ["Beit Alpha", "Persian", "Socrates"],
-      "continental": ["Marketmore", "Straight Eight", "Spacemaster"],
-      "temperate": ["Telegraph Improved", "Burpless Tasty Green", "Passandra"],
-      "oceanic": ["Northern Pickling", "Little Leaf", "Ministro"],
-      "arid": ["Armenian", "Middle Eastern", "Beit Alpha"],
-      "semiarid": ["Ashley", "Poinsett 76", "Dasher II"]
-    },
-    "beginnerTips": "Choose bush varieties for containers and small spaces. Harvest frequently for continued production.",
-    "advancedTips": "Implement vertical growing techniques and alternate-day harvesting schedule for maximum yields.",
-    "risks": [
-      {
-        "category": "Temperature Sensitivity",
-        "description": "Growth stops below 15°C (59°F); bitter fruits may develop above 32°C (90°F).",
-        "severity": "high",
-        "mitigation": "Use plastic mulch to warm soil early in the season and provide afternoon shade in peak summer heat."
-      },
-      {
-        "category": "Disease Pressure",
-        "description": "Powdery mildew and downy mildew are common in humid conditions.",
-        "severity": "medium",
-        "mitigation": "Choose resistant varieties, maintain good airflow, and use preventative organic fungicides."
-      },
-      {
-        "category": "Pollination Issues",
-        "description": "Poor pollination can result in misshapen fruits.",
-        "severity": "medium",
-        "mitigation": "Plant pollinator-attracting flowers nearby or hand-pollinate flowers in enclosed environments."
-      }
-    ],
+    "protectedExtensionWeeks": 4,
     "plantingMonths": {
       "tropical": {
-        "optimal": [3, 4, 9, 10],
-        "suitable": [2, 5, 8, 11],
-        "risky": [1, 6, 7, 12]
+        "optimal": [9, 10, 11],
+        "suitable": [8, 12],
+        "risky": [7, 1]
       },
       "subtropical": {
-        "optimal": [3, 4, 9, 10],
-        "suitable": [2, 5, 8, 11],
-        "risky": [1, 6, 7, 12]
+        "optimal": [3, 4, 5],
+        "suitable": [2, 6],
+        "risky": [1, 7]
       },
       "mediterranean": {
         "optimal": [4, 5],
@@ -175,267 +166,844 @@
         "risky": [3, 8]
       },
       "arid": {
-        "optimal": [1, 2, 10, 11],
-        "suitable": [3, 9, 12],
-        "risky": [4, 8]
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
       },
       "semiarid": {
-        "optimal": [1, 2, 10, 11],
-        "suitable": [3, 9, 12],
-        "risky": [4, 8]
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
       }
-    }
+    },
+    "recommendedVarieties": {
+      "tropical": ["Poinsett 76", "Ashley", "Marketmore 76"],
+      "subtropical": ["Straight Eight", "Marketmore", "Salad Bush"],
+      "mediterranean": ["Beit Alpha", "Lemon", "Armenian"],
+      "continental": ["Marketmore 76", "Northern Pickling", "Bush Champion"],
+      "temperate": ["Telegraph Improved", "Burpless Tasty Green", "Marketmore"],
+      "oceanic": ["Socrates", "Tyria", "Passandra"],
+      "arid": ["Armenian", "Beit Alpha", "Middle Eastern"],
+      "semiarid": ["Ashley", "Marketmore 76", "Straight Eight"]
+    },
+    "beginnerTips": "Choose bush varieties for containers or small spaces. Harvest regularly to encourage continued production.",
+    "advancedTips": "Try succession planting every 2-3 weeks for continuous harvest. Experiment with different trellising systems for maximum space efficiency.",
+    "risks": [
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to powdery mildew, downy mildew, and bacterial wilt.",
+        "severity": "high",
+        "mitigation": "Choose resistant varieties, ensure good air circulation, and avoid overhead watering."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to cucumber beetles, aphids, and spider mites.",
+        "severity": "medium",
+        "mitigation": "Use row covers until flowering, introduce beneficial insects, and monitor regularly."
+      },
+      {
+        "category": "Temperature Sensitivity",
+        "description": "Growth slows below 15°C (60°F) and plants may be damaged below 10°C (50°F).",
+        "severity": "medium",
+        "mitigation": "Use black plastic mulch to warm soil and row covers for cool nights."
+      },
+      {
+        "category": "Moisture Balance",
+        "description": "Inconsistent watering can lead to bitter fruits and reduced yields.",
+        "severity": "high",
+        "mitigation": "Maintain consistent soil moisture with regular watering and mulch."
+      }
+    ]
   },
   {
     "id": "bellPeppers",
     "name": "Bell Peppers",
     "scientificName": "Capsicum annuum",
     "image": "/images/crops/bell-pepper.jpg",
-    "lifeCycle": "60-90 days from transplant to first harvest",
-    "growthPattern": "Compact bushy plants that may require staking when heavy with fruit",
+    "lifeCycle": "Perennial grown as Annual",
+    "growthPattern": "Bushy",
     "baseYield": {
-      "min": 3,
-      "max": 6
+      "min": 2.0,
+      "max": 5.0
     },
-    "keyRequirements": "Full sun, warm temperatures (21-29°C/70-85°F), moderate but consistent moisture",
-    "timeToHarvest": "60-90 days after transplanting",
-    "harvestDuration": "8-10 weeks with proper care",
-    "maintenanceLevel": "Medium (staking may be required)",
-    "spacing": {
-      "min": 30,
-      "max": 45
+    "timeToHarvest": {
+      "min": 60,
+      "max": 90
     },
-    "seedStartWeeks": 8,
-    "protectedExtensionWeeks": 8,
-    "recommendedVarieties": {
-      "tropical": ["Aristotle", "California Wonder", "Cubanelle"],
-      "subtropical": ["King Arthur", "Big Bertha", "Sweet Sunrise"],
-      "mediterranean": ["Corno di Toro", "Marconi", "Sweet Italian"],
-      "continental": ["Ace", "New Ace", "Lady Bell"],
-      "temperate": ["Gypsy", "Orange Sun", "Sweet Chocolate"],
-      "oceanic": ["Olympus", "Early Sunsation", "King of the North"],
-      "arid": ["Desert Dawn", "Sweet Spot", "Baron"],
-      "semiarid": ["Valencia", "Jupiter", "Cabernet"]
+    "harvestDuration": {
+      "min": 4,
+      "max": 8
     },
-    "beginnerTips": "Start with compact varieties that don't require staking. Harvest at desired color stage – green is earliest.",
-    "advancedTips": "Prune to maintain 2-3 main stems for larger fruits and implement calcium supplementation for stronger cell walls.",
-    "risks": [
-      {
-        "category": "Temperature Sensitivity",
-        "description": "Flower drop occurs below 15°C (59°F) or above 32°C (90°F).",
-        "severity": "high",
-        "mitigation": "Use row covers for cold protection and shade cloth during heat waves. Avoid planting during extreme temperature periods."
-      },
-      {
-        "category": "Sunscald",
-        "description": "Direct intense sunlight can cause sunscald on fruits in very hot regions.",
-        "severity": "medium",
-        "mitigation": "Maintain healthy foliage coverage and consider partial shade in hottest regions during peak summer."
-      },
-      {
-        "category": "Pest Issues",
-        "description": "Aphids and spider mites are common in hot, dry conditions.",
-        "severity": "medium",
-        "mitigation": "Regular monitoring and occasional spraying with insecticidal soap. Maintain adequate humidity for mite prevention."
-      }
-    ],
-    "plantingMonths": {
-      "tropical": {
-        "optimal": [2, 3, 9, 10],
-        "suitable": [1, 4, 8, 11],
-        "risky": [5, 7, 12]
-      },
-      "subtropical": {
-        "optimal": [2, 3, 9, 10],
-        "suitable": [1, 4, 8, 11],
-        "risky": [5, 7, 12]
-      },
-      "mediterranean": {
-        "optimal": [3, 4],
-        "suitable": [2, 5],
-        "risky": [1, 6]
-      },
-      "continental": {
-        "optimal": [5, 6],
-        "suitable": [4, 7],
-        "risky": [3, 8]
-      },
-      "temperate": {
-        "optimal": [4, 5],
-        "suitable": [3, 6],
-        "risky": [2, 7]
-      },
-      "oceanic": {
-        "optimal": [5, 6],
-        "suitable": [4, 7],
-        "risky": [3, 8]
-      },
-      "arid": {
-        "optimal": [1, 2, 10, 11],
-        "suitable": [3, 9, 12],
-        "risky": [4, 8]
-      },
-      "semiarid": {
-        "optimal": [1, 2, 11, 12],
-        "suitable": [3, 10],
-        "risky": [4, 9]
-      }
-    }
-  },
-  {
-    "id": "eggplant",
-    "name": "Eggplant",
-    "scientificName": "Solanum melongena",
-    "image": "/images/crops/eggplant.jpg",
-    "lifeCycle": "70-120 days from transplant to harvest",
-    "growthPattern": "Bushy plants with woody stems that require support when fruiting heavily",
-    "baseYield": {
-      "min": 3,
-      "max": 5
-    },
-    "keyRequirements": "High heat (21-32°C/70-90°F), full sun, consistent moisture",
-    "timeToHarvest": "70-85 days after transplanting",
-    "harvestDuration": "6-8 weeks with regular harvesting",
-    "maintenanceLevel": "Medium-high (staking and pruning required)",
+    "maintenanceLevel": "Moderate",
+    "keyRequirements": "Full sun, warm temperatures, and well-drained soil. Benefits from support when heavy with fruit.",
     "spacing": {
       "min": 45,
       "max": 60
     },
     "seedStartWeeks": 8,
     "protectedExtensionWeeks": 6,
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [9, 10, 11],
+        "suitable": [8, 12],
+        "risky": [7, 1]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 5],
+        "suitable": [2, 6],
+        "risky": [1, 7]
+      },
+      "mediterranean": {
+        "optimal": [4, 5],
+        "suitable": [3, 6],
+        "risky": [2, 7]
+      },
+      "continental": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "temperate": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "oceanic": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "arid": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "semiarid": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      }
+    },
+    "recommendedVarieties": {
+      "tropical": ["California Wonder", "Cubanelle", "Golden California Wonder"],
+      "subtropical": ["Big Bertha", "Bell Boy", "Gypsy"],
+      "mediterranean": ["Corno di Toro", "Marconi", "Sweet Banana"],
+      "continental": ["King of the North", "New Ace", "Gypsy"],
+      "temperate": ["California Wonder", "Purple Beauty", "Sweet Chocolate"],
+      "oceanic": ["Ace", "King of the North", "Gypsy"],
+      "arid": ["Antohi Romanian", "Cubanelle", "Sweet Heat"],
+      "semiarid": ["California Wonder", "Big Bertha", "Gypsy"]
+    },
+    "beginnerTips": "Start with compact varieties that mature quickly. Harvest peppers at any stage of ripeness based on your preference.",
+    "advancedTips": "Use shade cloth in hot climates to prevent sunscald. Implement a foliar feeding program for maximum production.",
+    "risks": [
+      {
+        "category": "Temperature Extremes",
+        "description": "Blossoms drop when temperatures exceed 32°C (90°F) or fall below 15°C (60°F).",
+        "severity": "high",
+        "mitigation": "Use shade cloth during extreme heat and row covers for cool periods. Choose heat-tolerant varieties in hot climates."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to aphids, pepper weevils, and hornworms.",
+        "severity": "medium",
+        "mitigation": "Monitor regularly for pests, introduce beneficial insects, and use organic insecticidal soap if needed."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to bacterial spot, phytophthora, and tobacco mosaic virus.",
+        "severity": "medium",
+        "mitigation": "Choose resistant varieties, practice crop rotation, and avoid handling tobacco before working with plants."
+      },
+      {
+        "category": "Nutrient Deficiencies",
+        "description": "Often shows calcium deficiency leading to blossom end rot.",
+        "severity": "medium",
+        "mitigation": "Maintain consistent soil moisture and consider calcium supplements if soil is deficient."
+      }
+    ]
+  },
+  {
+    "id": "eggplant",
+    "name": "Eggplant",
+    "scientificName": "Solanum melongena",
+    "image": "/images/crops/eggplant.jpg",
+    "lifeCycle": "Perennial grown as Annual",
+    "growthPattern": "Bushy",
+    "baseYield": {
+      "min": 2.0,
+      "max": 4.0
+    },
+    "timeToHarvest": {
+      "min": 65,
+      "max": 85
+    },
+    "harvestDuration": {
+      "min": 4,
+      "max": 8
+    },
+    "maintenanceLevel": "Moderate",
+    "keyRequirements": "Full sun, warm temperatures, and well-drained soil. Requires consistent heat for good production.",
+    "spacing": {
+      "min": 45,
+      "max": 60
+    },
+    "seedStartWeeks": 8,
+    "protectedExtensionWeeks": 6,
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [9, 10, 11],
+        "suitable": [8, 12],
+        "risky": [7, 1]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 5],
+        "suitable": [2, 6],
+        "risky": [1, 7]
+      },
+      "mediterranean": {
+        "optimal": [4, 5],
+        "suitable": [3, 6],
+        "risky": [2, 7]
+      },
+      "continental": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "temperate": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "oceanic": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "arid": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "semiarid": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      }
+    },
     "recommendedVarieties": {
       "tropical": ["Florida Market", "Long Purple", "Thai Long Green"],
-      "subtropical": ["Black Beauty", "Ichiban", "Fairy Tale"],
-      "mediterranean": ["Rosa Bianca", "Listada de Gandia", "Italian Pink"],
-      "continental": ["Early Midnight", "Millionaire", "Little Prince"],
-      "temperate": ["Bonica", "Diamond", "Gretel"],
-      "oceanic": ["Orient Express", "Ping Tung", "Machiaw"],
-      "arid": ["Ghost Buster", "Antigua", "Turkish Orange"],
-      "semiarid": ["Black Shine", "Galine", "Orient Express"]
+      "subtropical": ["Black Beauty", "Rosa Bianca", "Ichiban"],
+      "mediterranean": ["Italian Pink", "Rosa Bianca", "Listada de Gandia"],
+      "continental": ["Early Black Egg", "Millionaire", "Fairy Tale"],
+      "temperate": ["Black Beauty", "Ping Tung Long", "Little Fingers"],
+      "oceanic": ["Millionaire", "Fairy Tale", "Gretel"],
+      "arid": ["Florida Market", "Black Beauty", "Long Purple"],
+      "semiarid": ["Black Beauty", "Ichiban", "Ping Tung Long"]
     },
-    "beginnerTips": "Choose smaller-fruited varieties for faster production. Harvest when skin is glossy for best flavor.",
-    "advancedTips": "Implement pruning to limit plants to 5-6 fruits at once for larger size. Use foil mulch to increase heat reflection.",
+    "beginnerTips": "Harvest when fruits are young and glossy for best flavor. Use pruning scissors to harvest, as stems are tough.",
+    "advancedTips": "Prune to 3-4 main stems for larger fruits. In hot climates, provide afternoon shade to prevent sunscald.",
     "risks": [
       {
         "category": "Cold Sensitivity",
-        "description": "Plants may stop growing below 15°C (59°F) and suffer damage below 10°C (50°F).",
+        "description": "Extremely sensitive to cold; damaged below 10°C (50°F).",
         "severity": "high",
         "mitigation": "Wait until soil and air temperatures are consistently warm before planting. Use black plastic mulch to warm soil."
       },
       {
-        "category": "Pest Vulnerability",
-        "description": "Highly attractive to flea beetles, spider mites, and aphids.",
+        "category": "Pest Challenges",
+        "description": "Vulnerable to flea beetles, aphids, and spider mites.",
         "severity": "high",
-        "mitigation": "Use floating row covers until plants are established. Regular spraying with neem oil can deter multiple pests."
+        "mitigation": "Use row covers until flowering, introduce beneficial insects, and monitor regularly."
       },
       {
-        "category": "Disease Risk",
-        "description": "Susceptible to verticillium wilt, especially in soil where related crops have grown.",
+        "category": "Disease Pressure",
+        "description": "Susceptible to verticillium wilt, phomopsis blight, and tobacco mosaic virus.",
         "severity": "medium",
-        "mitigation": "Implement crop rotation of at least 3 years. Choose resistant varieties when available."
+        "mitigation": "Choose resistant varieties, practice crop rotation, and avoid handling tobacco before working with plants."
+      },
+      {
+        "category": "Fruit Development",
+        "description": "Poor fruit set in extreme temperatures or with inadequate pollination.",
+        "severity": "medium",
+        "mitigation": "Hand pollinate flowers during extreme heat or cold. Ensure adequate bee activity."
       }
-    ],
-    "plantingMonths": {
-      "tropical": {
-        "optimal": [2, 3, 9, 10],
-        "suitable": [1, 4, 8, 11],
-        "risky": [5, 7, 12]
-      },
-      "subtropical": {
-        "optimal": [2, 3, 9, 10],
-        "suitable": [1, 4, 8, 11],
-        "risky": [5, 7, 12]
-      },
-      "mediterranean": {
-        "optimal": [3, 4],
-        "suitable": [2, 5],
-        "risky": [1, 6]
-      },
-      "continental": {
-        "optimal": [5, 6],
-        "suitable": [4, 7],
-        "risky": [3, 8]
-      },
-      "temperate": {
-        "optimal": [5, 6],
-        "suitable": [4, 7],
-        "risky": [3, 8]
-      },
-      "oceanic": {
-        "optimal": [5, 6],
-        "suitable": [4, 7],
-        "risky": [3, 8]
-      },
-      "arid": {
-        "optimal": [1, 2, 10, 11],
-        "suitable": [3, 9, 12],
-        "risky": [4, 8]
-      },
-      "semiarid": {
-        "optimal": [1, 2, 11, 12],
-        "suitable": [3, 10],
-        "risky": [4, 9]
-      }
-    }
+    ]
   },
   {
     "id": "hotPeppers",
     "name": "Hot Peppers",
-    "scientificName": "Capsicum species",
+    "scientificName": "Capsicum spp.",
     "image": "/images/crops/hot-pepper.jpg",
-    "lifeCycle": "80-120 days from transplant to harvest, depending on variety",
-    "growthPattern": "Compact to medium-sized bushy plants",
+    "lifeCycle": "Perennial grown as Annual",
+    "growthPattern": "Bushy",
     "baseYield": {
-      "min": 1.5,
-      "max": 3
+      "min": 1.0,
+      "max": 3.0
     },
-    "keyRequirements": "Heat-loving (21-32°C/70-90°F), full sun, moderate water (less than bell peppers)",
-    "timeToHarvest": "80-100 days after transplanting",
-    "harvestDuration": "8-12 weeks with regular harvesting",
-    "maintenanceLevel": "Low to medium (minimal pruning)",
+    "timeToHarvest": {
+      "min": 70,
+      "max": 100
+    },
+    "harvestDuration": {
+      "min": 4,
+      "max": 10
+    },
+    "maintenanceLevel": "Low to Moderate",
+    "keyRequirements": "Full sun, warm temperatures, and well-drained soil. Thrives in hot conditions.",
     "spacing": {
       "min": 30,
       "max": 45
     },
     "seedStartWeeks": 8,
     "protectedExtensionWeeks": 6,
-    "recommendedVarieties": {
-      "tropical": ["Habanero", "Scotch Bonnet", "Bird's Eye"],
-      "subtropical": ["Jalapeño", "Serrano", "Cayenne"],
-      "mediterranean": ["Calabrian", "Espelette", "Greek Pepperoncini"],
-      "continental": ["Hungarian Hot Wax", "Czech Black", "Bulgarian Carrot"],
-      "temperate": ["Fresno", "Anaheim", "Poblano"],
-      "oceanic": ["Early Jalapeño", "Cayenne Slim", "Hungarian Yellow Wax"],
-      "arid": ["Chiltepin", "Aji Amarillo", "De Arbol"],
-      "semiarid": ["Ancho", "Santa Fe", "Chimayo"]
-    },
-    "beginnerTips": "Start with milder varieties like jalapeño or poblano. Wear gloves when handling hot peppers.",
-    "advancedTips": "Try pruning flowers during early growth stage to encourage stronger plants and higher yields later.",
-    "risks": [
-      {
-        "category": "Temperature Requirements",
-        "description": "Slow growth below 18°C (65°F); may drop flowers in extreme heat >35°C (95°F).",
-        "severity": "medium",
-        "mitigation": "Wait until temperatures are consistently warm before planting. Provide afternoon shade in hottest regions."
-      },
-      {
-        "category": "Cross-Pollination",
-        "description": "Different hot pepper varieties can cross-pollinate, affecting next generation's heat level.",
-        "severity": "low",
-        "mitigation": "Separate different pepper varieties by at least 50 feet or use barriers if saving seeds."
-      },
-      {
-        "category": "Moisture Balance",
-        "description": "Overwatering can lead to root diseases; underwatering may cause blossom end rot.",
-        "severity": "medium",
-        "mitigation": "Allow soil to dry slightly between waterings. Use consistent watering schedule and mulch to maintain even moisture."
-      }
-    ],
     "plantingMonths": {
       "tropical": {
+        "optimal": [9, 10, 11],
+        "suitable": [8, 12, 1],
+        "risky": [7, 2]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 5],
+        "suitable": [2, 6],
+        "risky": [1, 7]
+      },
+      "mediterranean": {
+        "optimal": [4, 5],
+        "suitable": [3, 6],
+        "risky": [2, 7]
+      },
+      "continental": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "temperate": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "oceanic": {
+        "optimal": [5],
+        "suitable": [4, 6],
+        "risky": [3, 7]
+      },
+      "arid": {
         "optimal": [2, 3, 9, 10],
         "suitable": [1, 4, 8, 11],
         "risky": [5, 7, 12]
+      },
+      "semiarid": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      }
+    },
+    "recommendedVarieties": {
+      "tropical": ["Habanero", "Scotch Bonnet", "Thai Bird"],
+      "subtropical": ["Jalapeño", "Cayenne", "Serrano"],
+      "mediterranean": ["Calabrian", "Espelette", "Padrón"],
+      "continental": ["Hungarian Wax", "Anaheim", "Poblano"],
+      "temperate": ["Jalapeño", "Cayenne", "Hungarian Wax"],
+      "oceanic": ["Early Jalapeño", "Hungarian Hot Wax", "Cayenne"],
+      "arid": ["Chiltepin", "Habanero", "Serrano"],
+      "semiarid": ["Anaheim", "Jalapeño", "Cayenne"]
+    },
+    "beginnerTips": "Wear gloves when handling hot peppers. Harvest at any stage, but heat and flavor intensify as peppers ripen.",
+    "advancedTips": "Slightly stressing plants (reduced watering) after fruit set can increase capsaicin levels and heat. Cross-pollination between pepper varieties can affect the heat level of saved seeds.",
+    "risks": [
+      {
+        "category": "Temperature Extremes",
+        "description": "Blossoms drop when temperatures exceed 35°C (95°F) or fall below 15°C (60°F).",
+        "severity": "medium",
+        "mitigation": "Use shade cloth during extreme heat and row covers for cool periods. Choose appropriate varieties for your climate."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to aphids, pepper weevils, and hornworms.",
+        "severity": "medium",
+        "mitigation": "Monitor regularly for pests, introduce beneficial insects, and use organic insecticidal soap if needed."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to bacterial spot, phytophthora, and tobacco mosaic virus.",
+        "severity": "medium",
+        "mitigation": "Choose resistant varieties, practice crop rotation, and avoid handling tobacco before working with plants."
+      },
+      {
+        "category": "Fruit Development",
+        "description": "Poor fruit set in extreme temperatures or with inadequate pollination.",
+        "severity": "low",
+        "mitigation": "Hand pollinate flowers during extreme heat or cold. Ensure adequate bee activity."
+      }
+    ]
+  }
+,
+  {
+    "id": "lettuce",
+    "name": "Lettuce",
+    "scientificName": "Lactuca sativa",
+    "image": "/images/crops/lettuce.jpg",
+    "lifeCycle": "Annual",
+    "growthPattern": "Rosette",
+    "baseYield": {
+      "min": 1.5,
+      "max": 3.0
+    },
+    "timeToHarvest": {
+      "min": 30,
+      "max": 60
+    },
+    "harvestDuration": {
+      "min": 2,
+      "max": 4
+    },
+    "maintenanceLevel": "Low",
+    "keyRequirements": "Cool temperatures, consistent moisture, and partial shade in hot climates. Prefers rich, well-drained soil.",
+    "spacing": {
+      "min": 20,
+      "max": 30
+    },
+    "seedStartWeeks": 3,
+    "protectedExtensionWeeks": 3,
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [5, 6, 7, 8],
+        "suitable": [4, 9],
+        "risky": [3, 10]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "continental": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "temperate": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "oceanic": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "arid": {
+        "optimal": [2, 3, 10, 11],
+        "suitable": [1, 4, 9, 12],
+        "risky": [5, 8]
+      },
+      "semiarid": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      }
+    },
+    "recommendedVarieties": {
+      "tropical": ["Jericho", "Summer Crisp", "Nevada"],
+      "subtropical": ["Black Seeded Simpson", "Buttercrunch", "Red Sails"],
+      "mediterranean": ["Little Gem", "Lollo Rossa", "Batavia"],
+      "continental": ["Winter Density", "Rouge d'Hiver", "Arctic King"],
+      "temperate": ["Butterhead", "Romaine", "Oakleaf"],
+      "oceanic": ["Winter Gem", "Arctic King", "Salad Bowl"],
+      "arid": ["Jericho", "Nevada", "Summertime"],
+      "semiarid": ["Sierra", "Nevada", "Jericho"]
+    },
+    "beginnerTips": "Sow seeds shallowly and keep soil consistently moist until germination. Harvest outer leaves as needed for a continuous supply.",
+    "advancedTips": "Use succession planting every 2-3 weeks for continuous harvest. Try heat-tolerant varieties for summer growing.",
+    "risks": [
+      {
+        "category": "Temperature Extremes",
+        "description": "Bolts (goes to seed) quickly in hot weather above 24°C (75°F).",
+        "severity": "high",
+        "mitigation": "Plant heat-tolerant varieties in warm seasons, provide afternoon shade, and use bolt-resistant varieties."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to aphids, slugs, and snails.",
+        "severity": "medium",
+        "mitigation": "Use row covers, diatomaceous earth barriers for slugs, and introduce beneficial insects for aphid control."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to downy mildew, powdery mildew, and bottom rot.",
+        "severity": "medium",
+        "mitigation": "Ensure good air circulation, avoid overhead watering, and practice crop rotation."
+      },
+      {
+        "category": "Moisture Balance",
+        "description": "Inconsistent watering can cause bitter taste and tough leaves.",
+        "severity": "medium",
+        "mitigation": "Maintain consistent soil moisture with regular watering and mulch."
+      }
+    ]
+  },
+  {
+    "id": "spinach",
+    "name": "Spinach",
+    "scientificName": "Spinacia oleracea",
+    "image": "/images/crops/spinach.jpg",
+    "lifeCycle": "Annual",
+    "growthPattern": "Rosette",
+    "baseYield": {
+      "min": 1.0,
+      "max": 2.5
+    },
+    "timeToHarvest": {
+      "min": 30,
+      "max": 50
+    },
+    "harvestDuration": {
+      "min": 2,
+      "max": 4
+    },
+    "maintenanceLevel": "Low",
+    "keyRequirements": "Cool temperatures, consistent moisture, and nitrogen-rich soil. Prefers full sun in cool weather, partial shade in warmer conditions.",
+    "spacing": {
+      "min": 10,
+      "max": 15
+    },
+    "seedStartWeeks": 3,
+    "protectedExtensionWeeks": 3,
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [5, 6, 7, 8],
+        "suitable": [4, 9],
+        "risky": [3, 10]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "continental": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "temperate": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "oceanic": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "arid": {
+        "optimal": [2, 3, 10, 11],
+        "suitable": [1, 4, 9, 12],
+        "risky": [5, 8]
+      },
+      "semiarid": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      }
+    },
+    "recommendedVarieties": {
+      "tropical": ["Malabar Spinach", "New Zealand Spinach", "Ceylon Spinach"],
+      "subtropical": ["Space", "Tyee", "Bloomsdale Long Standing"],
+      "mediterranean": ["Viroflay", "Giant Winter", "Matador"],
+      "continental": ["Tyee", "Bloomsdale", "Winter Giant"],
+      "temperate": ["Tyee", "Space", "Bloomsdale"],
+      "oceanic": ["Winter Giant", "Tyee", "Bloomsdale"],
+      "arid": ["New Zealand Spinach", "Malabar Spinach", "Space"],
+      "semiarid": ["Space", "Tyee", "Viroflay"]
+    },
+    "beginnerTips": "Sow seeds directly in the garden. Harvest outer leaves as needed or cut the whole plant 1 inch above soil level for regrowth.",
+    "advancedTips": "Use succession planting every 2-3 weeks for continuous harvest. Try heat-tolerant varieties or spinach alternatives like New Zealand spinach for summer growing.",
+    "risks": [
+      {
+        "category": "Temperature Extremes",
+        "description": "Bolts quickly in hot weather above 21°C (70°F) and long daylight hours.",
+        "severity": "high",
+        "mitigation": "Plant heat-tolerant varieties in warm seasons, provide afternoon shade, and use bolt-resistant varieties."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to leaf miners, aphids, and slugs.",
+        "severity": "medium",
+        "mitigation": "Use row covers, introduce beneficial insects, and practice good garden sanitation."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to downy mildew, white rust, and fusarium wilt.",
+        "severity": "medium",
+        "mitigation": "Choose resistant varieties, ensure good air circulation, and practice crop rotation."
+      },
+      {
+        "category": "Nutrient Deficiencies",
+        "description": "Often shows nitrogen deficiency with yellowing leaves.",
+        "severity": "medium",
+        "mitigation": "Apply balanced organic fertilizer before planting and side-dress with nitrogen during growth."
+      }
+    ]
+  },
+  {
+    "id": "carrots",
+    "name": "Carrots",
+    "scientificName": "Daucus carota",
+    "image": "/images/crops/carrot.jpg",
+    "lifeCycle": "Biennial grown as Annual",
+    "growthPattern": "Root crop",
+    "baseYield": {
+      "min": 2.0,
+      "max": 4.0
+    },
+    "timeToHarvest": {
+      "min": 60,
+      "max": 80
+    },
+    "harvestDuration": {
+      "min": 2,
+      "max": 4
+    },
+    "maintenanceLevel": "Low",
+    "keyRequirements": "Full sun to partial shade, loose, deep, well-drained soil free of rocks and clods. Consistent moisture for germination.",
+    "spacing": {
+      "min": 5,
+      "max": 10
+    },
+    "seedStartWeeks": 0,
+    "protectedExtensionWeeks": 4,
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [5, 6, 7, 8],
+        "suitable": [4, 9],
+        "risky": [3, 10]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "continental": {
+        "optimal": [4, 5, 7, 8],
+        "suitable": [3, 6, 9],
+        "risky": [2, 10]
+      },
+      "temperate": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "oceanic": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "arid": {
+        "optimal": [2, 3, 10, 11],
+        "suitable": [1, 4, 9, 12],
+        "risky": [5, 8]
+      },
+      "semiarid": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      }
+    },
+    "recommendedVarieties": {
+      "tropical": ["Kuroda", "Tropical Sun", "Solar Yellow"],
+      "subtropical": ["Nantes", "Danvers", "Chantenay"],
+      "mediterranean": ["Nantes", "Imperator", "Chantenay"],
+      "continental": ["Napoli", "Bolero", "Scarlet Nantes"],
+      "temperate": ["Nantes", "Chantenay", "Danvers"],
+      "oceanic": ["Amsterdam Forcing", "Early Nantes", "Mokum"],
+      "arid": ["Chantenay", "Danvers", "Little Finger"],
+      "semiarid": ["Nantes", "Danvers", "Chantenay"]
+    },
+    "beginnerTips": "Sow seeds directly in the garden in loose, stone-free soil. Thin seedlings to proper spacing for straight roots. Keep soil consistently moist during germination.",
+    "advancedTips": "Use sand or fine compost to improve soil texture. Try growing in raised beds for deeper, straighter roots. Interplant with onions to deter carrot fly.",
+    "risks": [
+      {
+        "category": "Soil Conditions",
+        "description": "Rocky or compacted soil causes forked or stunted roots.",
+        "severity": "high",
+        "mitigation": "Prepare soil deeply, removing rocks and breaking up clods. Consider raised beds with screened soil."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to carrot fly, aphids, and nematodes.",
+        "severity": "medium",
+        "mitigation": "Use row covers, practice crop rotation, and plant companion plants like onions and garlic."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to alternaria leaf blight, powdery mildew, and root rot.",
+        "severity": "medium",
+        "mitigation": "Ensure good air circulation, avoid overhead watering, and practice crop rotation."
+      },
+      {
+        "category": "Moisture Balance",
+        "description": "Inconsistent watering can cause splitting and bitter taste.",
+        "severity": "medium",
+        "mitigation": "Maintain consistent soil moisture with regular watering and mulch."
+      }
+    ]
+  },
+  {
+    "id": "radishes",
+    "name": "Radishes",
+    "scientificName": "Raphanus sativus",
+    "image": "/images/crops/radish.jpg",
+    "lifeCycle": "Annual",
+    "growthPattern": "Root crop",
+    "baseYield": {
+      "min": 1.5,
+      "max": 3.0
+    },
+    "timeToHarvest": {
+      "min": 21,
+      "max": 30
+    },
+    "harvestDuration": {
+      "min": 1,
+      "max": 2
+    },
+    "maintenanceLevel": "Very Low",
+    "keyRequirements": "Full sun to partial shade, loose, well-drained soil. Cool temperatures for best quality.",
+    "spacing": {
+      "min": 2,
+      "max": 5
+    },
+    "seedStartWeeks": 0,
+    "protectedExtensionWeeks": 2,
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [5, 6, 7, 8],
+        "suitable": [4, 9],
+        "risky": [3, 10]
+      },
+      "subtropical": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      },
+      "continental": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "temperate": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "oceanic": {
+        "optimal": [4, 5, 8, 9],
+        "suitable": [3, 6, 7, 10],
+        "risky": [2, 11]
+      },
+      "arid": {
+        "optimal": [2, 3, 10, 11],
+        "suitable": [1, 4, 9, 12],
+        "risky": [5, 8]
+      },
+      "semiarid": {
+        "optimal": [3, 4, 9, 10],
+        "suitable": [2, 5, 8, 11],
+        "risky": [1, 6, 7, 12]
+      }
+    },
+    "recommendedVarieties": {
+      "tropical": ["Daikon", "White Icicle", "Red Meat (Watermelon)"],
+      "subtropical": ["Cherry Belle", "French Breakfast", "White Icicle"],
+      "mediterranean": ["Cherry Belle", "French Breakfast", "Easter Egg"],
+      "continental": ["Cherry Belle", "Easter Egg", "Purple Plum"],
+      "temperate": ["Cherry Belle", "French Breakfast", "Easter Egg"],
+      "oceanic": ["Cherry Belle", "French Breakfast", "Easter Egg"],
+      "arid": ["Daikon", "White Icicle", "Cherry Belle"],
+      "semiarid": ["Cherry Belle", "White Icicle", "French Breakfast"]
+    },
+    "beginnerTips": "Sow seeds directly in the garden. Harvest promptly when ready to prevent pithiness. Perfect for children's gardens due to quick results.",
+    "advancedTips": "Use succession planting every 7-10 days for continuous harvest. Try winter radishes like daikon for fall planting and winter harvest.",
+    "risks": [
+      {
+        "category": "Temperature Extremes",
+        "description": "Hot weather causes bolting and pithy, strong-flavored roots.",
+        "severity": "high",
+        "mitigation": "Plant during cool seasons, provide afternoon shade in warm weather, and harvest promptly."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to flea beetles, root maggots, and aphids.",
+        "severity": "medium",
+        "mitigation": "Use row covers, practice crop rotation, and maintain good garden sanitation."
+      },
+      {
+        "category": "Soil Conditions",
+        "description": "Compacted soil causes misshapen roots.",
+        "severity": "medium",
+        "mitigation": "Prepare soil well, loosening to at least 6 inches depth. Add compost to improve soil structure."
+      },
+      {
+        "category": "Growth Issues",
+        "description": "Overcrowding leads to small, underdeveloped roots.",
+        "severity": "medium",
+        "mitigation": "Thin seedlings properly to recommended spacing. Avoid overseeding."
+      }
+    ]
+  },
+  {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "scientificName": "Brassica oleracea var. italica",
+    "image": "/images/crops/broccoli.jpg",
+    "lifeCycle": "Biennial grown as Annual",
+    "growthPattern": "Head-forming",
+    "baseYield": {
+      "min": 0.5,
+      "max": 1.0
+    },
+    "timeToHarvest": {
+      "min": 60,
+      "max": 100
+    },
+    "harvestDuration": {
+      "min": 2,
+      "max": 4
+    },
+    "maintenanceLevel": "Moderate",
+    "keyRequirements": "Full sun, consistent moisture, and fertile, well-drained soil. Prefers cool weather for head formation.",
+    "spacing": {
+      "min": 45,
+      "max": 60
+    },
+    "seedStartWeeks": 6,
+    "protectedExtensionWeeks": 4,
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [5, 6, 7, 8],
+        "suitable": [4, 9],
+        "risky": [3, 10]
       },
       "subtropical": {
         "optimal": [2, 3, 9, 10],
@@ -443,40 +1011,181 @@
         "risky": [5, 7, 12]
       },
       "mediterranean": {
-        "optimal": [3, 4],
-        "suitable": [2, 5],
-        "risky": [1, 6]
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
       },
       "continental": {
-        "optimal": [5, 6],
-        "suitable": [4, 7],
-        "risky": [3, 8]
+        "optimal": [4, 5, 7, 8],
+        "suitable": [3, 6, 9],
+        "risky": [2, 10]
       },
       "temperate": {
-        "optimal": [5, 6],
-        "suitable": [4, 7],
-        "risky": [3, 8]
+        "optimal": [3, 4, 8, 9],
+        "suitable": [2, 5, 7, 10],
+        "risky": [1, 6, 11]
       },
       "oceanic": {
-        "optimal": [5, 6],
-        "suitable": [4, 7],
-        "risky": [3, 8]
+        "optimal": [3, 4, 8, 9],
+        "suitable": [2, 5, 7, 10],
+        "risky": [1, 6, 11]
       },
       "arid": {
-        "optimal": [1, 2, 10, 11],
-        "suitable": [3, 9, 12],
-        "risky": [4, 8]
+        "optimal": [2, 3, 10, 11],
+        "suitable": [1, 4, 9, 12],
+        "risky": [5, 8]
       },
       "semiarid": {
-        "optimal": [1, 2, 11, 12],
-        "suitable": [3, 10],
-        "risky": [4, 9]
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
       }
-    }
-  }
-]suitable": [3, 6],
-        "risky": [2, 7]
+    },
+    "recommendedVarieties": {
+      "tropical": ["Green Magic", "Belstar", "Arcadia"],
+      "subtropical": ["Calabrese", "De Cicco", "Waltham 29"],
+      "mediterranean": ["Calabrese", "Romanesco", "Marathon"],
+      "continental": ["Belstar", "Arcadia", "Eastern Magic"],
+      "temperate": ["Calabrese", "Waltham 29", "Green Magic"],
+      "oceanic": ["Calabrese", "Green Magic", "Belstar"],
+      "arid": ["Green Magic", "Belstar", "Imperial"],
+      "semiarid": ["Belstar", "Imperial", "Green Magic"]
+    },
+    "beginnerTips": "Start seeds indoors and transplant when seedlings have 4-5 true leaves. Harvest the main head when buds are tight and before flowers open.",
+    "advancedTips": "After harvesting the main head, leave the plant to produce side shoots for extended harvest. Apply balanced organic fertilizer every 3-4 weeks.",
+    "risks": [
+      {
+        "category": "Temperature Extremes",
+        "description": "Heat causes loose, bitter heads and premature flowering. Frost damage on young plants.",
+        "severity": "high",
+        "mitigation": "Plant for harvest in cool weather. Use row covers for frost protection and shade cloth for heat protection."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to cabbage worms, aphids, and flea beetles.",
+        "severity": "high",
+        "mitigation": "Use row covers, introduce beneficial insects, and apply organic Bt (Bacillus thuringiensis) for caterpillar control."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to clubroot, black rot, and downy mildew.",
+        "severity": "medium",
+        "mitigation": "Practice crop rotation (4-year minimum for brassicas), ensure good air circulation, and maintain proper pH (6.5-7.0)."
+      },
+      {
+        "category": "Nutrient Requirements",
+        "description": "Heavy feeder requiring significant nitrogen and calcium.",
+        "severity": "medium",
+        "mitigation": "Amend soil with compost before planting and side-dress with balanced organic fertilizer during growth."
+      }
+    ]
+  },
+  {
+    "id": "cauliflower",
+    "name": "Cauliflower",
+    "scientificName": "Brassica oleracea var. botrytis",
+    "image": "/images/crops/cauliflower.jpg",
+    "lifeCycle": "Biennial grown as Annual",
+    "growthPattern": "Head-forming",
+    "baseYield": {
+      "min": 0.5,
+      "max": 1.0
+    },
+    "timeToHarvest": {
+      "min": 70,
+      "max": 120
+    },
+    "harvestDuration": {
+      "min": 1,
+      "max": 2
+    },
+    "maintenanceLevel": "High",
+    "keyRequirements": "Full sun, consistent moisture, and fertile, well-drained soil. Requires cool weather and consistent temperatures for head formation.",
+    "spacing": {
+      "min": 45,
+      "max": 60
+    },
+    "seedStartWeeks": 6,
+    "protectedExtensionWeeks": 4,
+    "plantingMonths": {
+      "tropical": {
+        "optimal": [5, 6, 7, 8],
+        "suitable": [4, 9],
+        "risky": [3, 10]
+      },
+      "subtropical": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "mediterranean": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      },
+      "continental": {
+        "optimal": [4, 5, 7, 8],
+        "suitable": [3, 6, 9],
+        "risky": [2, 10]
       },
       "temperate": {
-        "optimal": [4, 5],
-        "
+        "optimal": [3, 4, 8, 9],
+        "suitable": [2, 5, 7, 10],
+        "risky": [1, 6, 11]
+      },
+      "oceanic": {
+        "optimal": [3, 4, 8, 9],
+        "suitable": [2, 5, 7, 10],
+        "risky": [1, 6, 11]
+      },
+      "arid": {
+        "optimal": [2, 3, 10, 11],
+        "suitable": [1, 4, 9, 12],
+        "risky": [5, 8]
+      },
+      "semiarid": {
+        "optimal": [2, 3, 9, 10],
+        "suitable": [1, 4, 8, 11],
+        "risky": [5, 7, 12]
+      }
+    },
+    "recommendedVarieties": {
+      "tropical": ["Tropical Delight", "Snowball Y", "Candid Charm"],
+      "subtropical": ["Amazing", "Snow Crown", "Snowball Y"],
+      "mediterranean": ["Romanesco", "Snowball", "Violet Queen"],
+      "continental": ["Snow Crown", "Amazing", "Candid Charm"],
+      "temperate": ["Snowball", "Snow Crown", "Amazing"],
+      "oceanic": ["Snowball", "Snow Crown", "Romanesco"],
+      "arid": ["Heat Wave II", "Snow Crown", "Candid Charm"],
+      "semiarid": ["Snow Crown", "Heat Wave II", "Amazing"]
+    },
+    "beginnerTips": "Start seeds indoors and transplant when seedlings have 4-5 true leaves. Blanch heads by tying outer leaves over the developing head when it's about 2-3 inches in diameter.",
+    "advancedTips": "Maintain consistent soil moisture and temperature for best head formation. Apply balanced organic fertilizer every 3-4 weeks. Try colored varieties like purple, orange, or green (Romanesco).",
+    "risks": [
+      {
+        "category": "Temperature Extremes",
+        "description": "Very sensitive to temperature fluctuations. Heat causes loose, discolored heads. Cold can damage young plants.",
+        "severity": "high",
+        "mitigation": "Plant for harvest in cool weather. Use row covers for frost protection and shade cloth for heat protection."
+      },
+      {
+        "category": "Pest Challenges",
+        "description": "Vulnerable to cabbage worms, aphids, and flea beetles.",
+        "severity": "high",
+        "mitigation": "Use row covers, introduce beneficial insects, and apply organic Bt (Bacillus thuringiensis) for caterpillar control."
+      },
+      {
+        "category": "Disease Pressure",
+        "description": "Susceptible to clubroot, black rot, and downy mildew.",
+        "severity": "medium",
+        "mitigation": "Practice crop rotation (4-year minimum for brassicas), ensure good air circulation, and maintain proper pH (6.5-7.0)."
+      },
+      {
+        "category": "Growth Issues",
+        "description": "Buttoning (small premature heads) due to stress or temperature fluctuations.",
+        "severity": "high",
+        "mitigation": "Maintain consistent growing conditions, avoid transplant shock, and ensure adequate nutrients and water."
+      }
+    ]
+  }
+]

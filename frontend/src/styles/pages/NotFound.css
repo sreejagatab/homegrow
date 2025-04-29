@@ -1,0 +1,89 @@
+/* Not Found Page Styles */
+
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 30px;
+  text-align: center;
+}
+
+.not-found-content {
+  max-width: 600px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-content h1 {
+  font-size: 120px;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1;
+}
+
+.not-found-content h2 {
+  font-size: 32px;
+  color: var(--text-dark);
+  margin: 10px 0 20px;
+}
+
+.not-found-content p {
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 30px;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.not-found-actions a {
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.not-found-actions .btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.not-found-actions .btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.not-found-actions .btn-secondary {
+  background-color: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.not-found-actions .btn-secondary:hover {
+  background-color: rgba(46, 125, 50, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .not-found-content h1 {
+    font-size: 80px;
+  }
+  
+  .not-found-content h2 {
+    font-size: 24px;
+  }
+  
+  .not-found-content p {
+    font-size: 16px;
+  }
+  
+  .not-found-actions {
+    flex-direction: column;
+  }
+}

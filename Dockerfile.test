@@ -1,0 +1,49 @@
+# Use Node.js as the base image
+FROM node:16
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY backend/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy backend code
+COPY backend/ ./
+
+# Copy test scripts
+COPY test-mongodb.js ./
+COPY test-auth.js ./
+
+# Create a .env file for testing
+RUN echo "NODE_ENV=test" > .env \
+    && echo "PORT=5001" >> .env \
+    && echo "MONGODB_URI=mongodb://localhost:27017/homegrow_test" >> .env \
+    && echo "JWT_SECRET=test_secret_key" >> .env \
+    && echo "JWT_EXPIRES_IN=1h" >> .env \
+    && echo "CORS_ORIGIN=*" >> .env
+
+# Install MongoDB in the container
+RUN apt-get update && apt-get install -y wget gnupg \
+    && wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add - \
+    && echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list \
+    && apt-get update \
+    && apt-get install -y mongodb-org \
+    && mkdir -p /data/db
+
+# Create a startup script
+RUN echo "#!/bin/bash" > /app/run-tests.sh \
+    && echo "echo 'Starting MongoDB...'" >> /app/run-tests.sh \
+    && echo "mongod --fork --logpath /var/log/mongodb.log" >> /app/run-tests.sh \
+    && echo "sleep 5" >> /app/run-tests.sh \
+    && echo "echo 'Testing MongoDB connection...'" >> /app/run-tests.sh \
+    && echo "node test-mongodb.js" >> /app/run-tests.sh \
+    && echo "echo 'Testing authentication...'" >> /app/run-tests.sh \
+    && echo "node test-auth.js" >> /app/run-tests.sh \
+    && echo "echo 'Tests completed.'" >> /app/run-tests.sh \
+    && chmod +x /app/run-tests.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/app/run-tests.sh"]

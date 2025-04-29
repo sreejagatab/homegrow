@@ -31,6 +31,27 @@ router.get('/climate-zones', forecastController.getClimateZones);
 router.get('/regions/:country', forecastController.getRegionsByCountry);
 
 /**
+ * @route   GET /api/forecast/regions/:country/:regionId
+ * @desc    Get detailed information for a specific region
+ * @access  Public
+ */
+router.get('/regions/:country/:regionId', forecastController.getRegionDetails);
+
+/**
+ * @route   GET /api/forecast/regions/:country/:regionId/subregions
+ * @desc    Get subregions for a specific region
+ * @access  Public
+ */
+router.get('/regions/:country/:regionId/subregions', forecastController.getSubregionsByRegion);
+
+/**
+ * @route   GET /api/forecast/regions/:country/:regionId/subregions/:subregionId
+ * @desc    Get detailed information for a specific subregion
+ * @access  Public
+ */
+router.get('/regions/:country/:regionId/subregions/:subregionId', forecastController.getSubregionDetails);
+
+/**
  * @route   GET /api/forecast/history/:userId
  * @desc    Get forecast history for a user
  * @access  Private

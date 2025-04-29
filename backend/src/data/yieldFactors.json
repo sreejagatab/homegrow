@@ -1,143 +1,203 @@
 {
   "climate": {
     "tropical": {
+      "tomatoes": 0.9,
+      "cucumbers": 1.1,
+      "bellPeppers": 1.1,
+      "eggplant": 1.2,
+      "hotPeppers": 1.3,
+      "lettuce": 0.7,
+      "spinach": 0.6,
+      "carrots": 0.8,
+      "radishes": 0.9,
+      "broccoli": 0.6,
+      "cauliflower": 0.5
+    },
+    "subtropical": {
       "tomatoes": 1.1,
       "cucumbers": 1.1,
       "bellPeppers": 1.1,
       "eggplant": 1.1,
-      "hotPeppers": 1.1
-    }
-  },
-  "experience": {
-    "beginner": {
-      "tomatoes": 0.7,
-      "cucumbers": 0.8,
-      "bellPeppers": 0.7,
-      "eggplant": 0.6,
-      "hotPeppers": 0.6
-    },
-    "intermediate": {
-      "tomatoes": 1.0,
-      "cucumbers": 1.0,
-      "bellPeppers": 1.0,
-      "eggplant": 1.0,
-      "hotPeppers": 1.0
-    },
-    "advanced": {
-      "tomatoes": 1.3,
-      "cucumbers": 1.2,
-      "bellPeppers": 1.3,
-      "eggplant": 1.4,
-      "hotPeppers": 1.4
-    }
-  },
-  "seasonality": {
-    "optimal": {
-      "tomatoes": 1.0,
-      "cucumbers": 1.0,
-      "bellPeppers": 1.0,
-      "eggplant": 1.0,
-      "hotPeppers": 1.0
-    },
-    "suitable": {
-      "tomatoes": 0.8,
-      "cucumbers": 0.8,
-      "bellPeppers": 0.8,
-      "eggplant": 0.8,
-      "hotPeppers": 0.8
-    },
-    "risky": {
-      "tomatoes": 0.5,
-      "cucumbers": 0.5,
-      "bellPeppers": 0.5,
-      "eggplant": 0.5,
-      "hotPeppers": 0.5
-    },
-    "not_recommended": {
-      "tomatoes": 0.2,
-      "cucumbers": 0.2,
-      "bellPeppers": 0.2,
-      "eggplant": 0.2,
-      "hotPeppers": 0.2
-    }
-  }
-} 0.8,
-      "cucumbers": 0.9,
-      "bellPeppers": 1.1,
-      "eggplant": 1.2,
-      "hotPeppers": 1.3
-    },
-    "subtropical": {
-      "tomatoes": 1.0,
-      "cucumbers": 1.1,
-      "bellPeppers": 1.2,
-      "eggplant": 1.2,
-      "hotPeppers": 1.2
+      "hotPeppers": 1.2,
+      "lettuce": 0.9,
+      "spinach": 0.8,
+      "carrots": 1.0,
+      "radishes": 1.0,
+      "broccoli": 0.8,
+      "cauliflower": 0.7
     },
     "mediterranean": {
       "tomatoes": 1.2,
       "cucumbers": 1.0,
       "bellPeppers": 1.1,
       "eggplant": 1.1,
-      "hotPeppers": 1.1
+      "hotPeppers": 1.1,
+      "lettuce": 1.0,
+      "spinach": 0.9,
+      "carrots": 1.1,
+      "radishes": 1.1,
+      "broccoli": 1.0,
+      "cauliflower": 0.9
     },
     "continental": {
       "tomatoes": 0.9,
-      "cucumbers": 0.8,
-      "bellPeppers": 0.8,
-      "eggplant": 0.7,
-      "hotPeppers": 0.8
-    },
-    "temperate": {
-      "tomatoes": 0.8,
       "cucumbers": 0.9,
       "bellPeppers": 0.8,
       "eggplant": 0.7,
-      "hotPeppers": 0.7
+      "hotPeppers": 0.8,
+      "lettuce": 1.1,
+      "spinach": 1.2,
+      "carrots": 1.2,
+      "radishes": 1.2,
+      "broccoli": 1.2,
+      "cauliflower": 1.1
     },
-    "oceanic": {
-      "tomatoes": 0.7,
-      "cucumbers": 0.8,
-      "bellPeppers": 0.7,
-      "eggplant": 0.6,
-      "hotPeppers": 0.6
-    },
-    "arid": {
-      "tomatoes": 0.7,
-      "cucumbers": 0.6,
+    "temperate": {
+      "tomatoes": 1.0,
+      "cucumbers": 0.9,
       "bellPeppers": 0.9,
       "eggplant": 0.8,
-      "hotPeppers": 1.0
+      "hotPeppers": 0.8,
+      "lettuce": 1.2,
+      "spinach": 1.2,
+      "carrots": 1.2,
+      "radishes": 1.2,
+      "broccoli": 1.2,
+      "cauliflower": 1.2
+    },
+    "oceanic": {
+      "tomatoes": 0.8,
+      "cucumbers": 0.9,
+      "bellPeppers": 0.7,
+      "eggplant": 0.6,
+      "hotPeppers": 0.6,
+      "lettuce": 1.2,
+      "spinach": 1.3,
+      "carrots": 1.2,
+      "radishes": 1.2,
+      "broccoli": 1.3,
+      "cauliflower": 1.3
+    },
+    "arid": {
+      "tomatoes": 0.9,
+      "cucumbers": 0.8,
+      "bellPeppers": 0.9,
+      "eggplant": 0.9,
+      "hotPeppers": 1.0,
+      "lettuce": 0.7,
+      "spinach": 0.6,
+      "carrots": 0.8,
+      "radishes": 0.8,
+      "broccoli": 0.7,
+      "cauliflower": 0.6
     },
     "semiarid": {
-      "tomatoes": 0.8,
-      "cucumbers": 0.7,
-      "bellPeppers": 1.0,
+      "tomatoes": 1.0,
+      "cucumbers": 0.9,
+      "bellPeppers": 0.9,
       "eggplant": 0.9,
-      "hotPeppers": 1.1
+      "hotPeppers": 1.0,
+      "lettuce": 0.8,
+      "spinach": 0.7,
+      "carrots": 0.9,
+      "radishes": 0.9,
+      "broccoli": 0.8,
+      "cauliflower": 0.7
     }
   },
   "environment": {
     "open": {
-      "tomatoes": 0.8,
-      "cucumbers": 0.7,
-      "bellPeppers": 0.8,
-      "eggplant": 0.8,
-      "hotPeppers": 0.9
+      "tomatoes": 1.0,
+      "cucumbers": 1.0,
+      "bellPeppers": 1.0,
+      "eggplant": 1.0,
+      "hotPeppers": 1.0,
+      "lettuce": 1.0,
+      "spinach": 1.0,
+      "carrots": 1.0,
+      "radishes": 1.0,
+      "broccoli": 1.0,
+      "cauliflower": 1.0
     },
     "protected": {
       "tomatoes": 1.2,
       "cucumbers": 1.3,
       "bellPeppers": 1.2,
-      "eggplant": 1.2,
-      "hotPeppers": 1.1
+      "eggplant": 1.3,
+      "hotPeppers": 1.2,
+      "lettuce": 1.3,
+      "spinach": 1.3,
+      "carrots": 1.2,
+      "radishes": 1.2,
+      "broccoli": 1.3,
+      "cauliflower": 1.3
     },
     "cooled": {
-      "tomatoes": 1.5,
-      "cucumbers": 1.6,
-      "bellPeppers": 1.5,
-      "eggplant": 1.4,
-      "hotPeppers": 1.3
+      "tomatoes": 1.4,
+      "cucumbers": 1.5,
+      "bellPeppers": 1.4,
+      "eggplant": 1.5,
+      "hotPeppers": 1.3,
+      "lettuce": 1.5,
+      "spinach": 1.5,
+      "carrots": 1.3,
+      "radishes": 1.3,
+      "broccoli": 1.5,
+      "cauliflower": 1.5
     },
-    "noncooled": {
-      "tomatoes":
+    "non-cooled": {
+      "tomatoes": 1.1,
+      "cucumbers": 1.2,
+      "bellPeppers": 1.1,
+      "eggplant": 1.2,
+      "hotPeppers": 1.1,
+      "lettuce": 1.2,
+      "spinach": 1.2,
+      "carrots": 1.1,
+      "radishes": 1.1,
+      "broccoli": 1.2,
+      "cauliflower": 1.2
+    }
+  },
+  "experience": {
+    "beginner": {
+      "tomatoes": 0.8,
+      "cucumbers": 0.9,
+      "bellPeppers": 0.8,
+      "eggplant": 0.7,
+      "hotPeppers": 0.8,
+      "lettuce": 0.9,
+      "spinach": 0.9,
+      "carrots": 0.9,
+      "radishes": 1.0,
+      "broccoli": 0.7,
+      "cauliflower": 0.6
+    },
+    "intermediate": {
+      "tomatoes": 1.0,
+      "cucumbers": 1.0,
+      "bellPeppers": 1.0,
+      "eggplant": 1.0,
+      "hotPeppers": 1.0,
+      "lettuce": 1.0,
+      "spinach": 1.0,
+      "carrots": 1.0,
+      "radishes": 1.0,
+      "broccoli": 1.0,
+      "cauliflower": 1.0
+    },
+    "advanced": {
+      "tomatoes": 1.2,
+      "cucumbers": 1.1,
+      "bellPeppers": 1.2,
+      "eggplant": 1.3,
+      "hotPeppers": 1.2,
+      "lettuce": 1.1,
+      "spinach": 1.1,
+      "carrots": 1.1,
+      "radishes": 1.1,
+      "broccoli": 1.3,
+      "cauliflower": 1.4
+    }
+  }
+}

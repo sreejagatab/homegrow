@@ -1,0 +1,149 @@
+config:
+  target: "http://localhost:5001"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 20
+      name: "Warm up phase"
+    - duration: 120
+      arrivalRate: 20
+      name: "Sustained load phase"
+    - duration: 60
+      arrivalRate: 20
+      rampTo: 50
+      name: "High load phase"
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Health check"
+    weight: 10
+    flow:
+      - get:
+          url: "/api/health"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "success"
+
+  - name: "Get crops and climate zones"
+    weight: 20
+    flow:
+      - get:
+          url: "/api/forecast/crops"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "success"
+      - get:
+          url: "/api/forecast/climate-zones"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "success"
+
+  - name: "User registration and login"
+    weight: 10
+    flow:
+      - post:
+          url: "/api/auth/register"
+          json:
+            name: "Test User {{ $randomNumber(1000, 9999) }}"
+            email: "test{{ $randomNumber(1000, 9999) }}@example.com"
+            password: "Password123"
+          capture:
+            - json: "$.token"
+              as: "token"
+            - json: "$.user.id"
+              as: "userId"
+          expect:
+            - statusCode: 201
+            - contentType: "application/json"
+            - hasProperty: "token"
+      - post:
+          url: "/api/auth/login"
+          json:
+            email: "test{{ $randomNumber(1000, 9999) }}@example.com"
+            password: "Password123"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "token"
+
+  - name: "Generate forecast"
+    weight: 40
+    flow:
+      - post:
+          url: "/api/auth/register"
+          json:
+            name: "Test User {{ $randomNumber(1000, 9999) }}"
+            email: "test{{ $randomNumber(1000, 9999) }}@example.com"
+            password: "Password123"
+          capture:
+            - json: "$.token"
+              as: "token"
+            - json: "$.user.id"
+              as: "userId"
+      - post:
+          url: "/api/forecast"
+          headers:
+            Authorization: "Bearer {{ token }}"
+          json:
+            climate: "mediterranean"
+            environment: "open"
+            area: 100
+            crops: ["tomatoes", "cucumbers"]
+          capture:
+            - json: "$"
+              as: "forecastData"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "success"
+      - post:
+          url: "/api/forecast/save/{{ userId }}"
+          headers:
+            Authorization: "Bearer {{ token }}"
+          json:
+            params:
+              climate: "mediterranean"
+              environment: "open"
+              area: 100
+              crops: ["tomatoes", "cucumbers"]
+            results: "{{ forecastData.data }}"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "success"
+
+  - name: "Protected routes"
+    weight: 20
+    flow:
+      - post:
+          url: "/api/auth/register"
+          json:
+            name: "Test User {{ $randomNumber(1000, 9999) }}"
+            email: "test{{ $randomNumber(1000, 9999) }}@example.com"
+            password: "Password123"
+          capture:
+            - json: "$.token"
+              as: "token"
+            - json: "$.user.id"
+              as: "userId"
+      - get:
+          url: "/api/auth/me"
+          headers:
+            Authorization: "Bearer {{ token }}"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "success"
+      - get:
+          url: "/api/forecast/history/{{ userId }}"
+          headers:
+            Authorization: "Bearer {{ token }}"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+            - hasProperty: "success"

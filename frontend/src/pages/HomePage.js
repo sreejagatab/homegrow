@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import ForecastForm from '../components/ForecastForm';
 import CropTabs from '../components/CropTabs';
+import ApiStatus from '../components/ApiStatus';
 import { ForecastContext } from '../contexts/ForecastContext';
 import '../styles/pages/HomePage.css';
 
@@ -93,25 +94,29 @@ const HomePage = () => {
               <h3>Enter Your Location</h3>
               <p>Select your country, region, and climate zone to get location-specific forecasts.</p>
             </div>
-            
+
             <div className="step">
               <div className="step-number">2</div>
               <h3>Specify Growing Environment</h3>
               <p>Tell us about your growing setup - whether it's open field, greenhouse, or other environments.</p>
             </div>
-            
+
             <div className="step">
               <div className="step-number">3</div>
               <h3>Select Your Crops</h3>
               <p>Choose from our selection of vegetable crops to include in your forecast.</p>
             </div>
-            
+
             <div className="step">
               <div className="step-number">4</div>
               <h3>Get Your Forecast</h3>
               <p>Receive comprehensive planting forecasts, calendars, and recommendations.</p>
             </div>
           </div>
+        </section>
+
+        <section className="api-status-section">
+          <ApiStatus />
         </section>
       </div>
     </div>

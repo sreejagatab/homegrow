@@ -1,0 +1,58 @@
+name: Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  backend-tests:
+    runs-on: ubuntu-latest
+    
+    services:
+      mongodb:
+        image: mongo:4.4
+        ports:
+          - 27017:27017
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: |
+          cd backend
+          npm ci
+      - name: Run tests
+        run: |
+          cd backend
+          npm test
+        env:
+          MONGODB_URI: mongodb://localhost:27017/homegrow_test
+          JWT_SECRET: test_secret_key
+          JWT_EXPIRES_IN: 1h
+          NODE_ENV: test
+          PORT: 5001
+  
+  frontend-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm ci
+      - name: Run tests
+        run: |
+          cd frontend
+          npm run test:ci
+        env:
+          CI: true

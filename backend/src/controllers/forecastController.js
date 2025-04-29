@@ -10,21 +10,21 @@ const { formatForecastResponse } = require('../utils/formatters');
  */
 exports.generateForecast = async (req, res, next) => {
   try {
-    const { 
-      country, 
-      region, 
-      climate, 
-      environment, 
-      area, 
+    const {
+      country,
+      region,
+      climate,
+      environment,
+      area,
       crops = ['tomatoes', 'cucumbers', 'bellPeppers', 'eggplant', 'hotPeppers'],
       experience = 'intermediate'
     } = req.body;
 
     // Validate required inputs
     if (!climate || !environment || !area) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Missing required parameters' 
+      return res.status(400).json({
+        success: false,
+        message: 'Missing required parameters'
       });
     }
 
@@ -40,7 +40,7 @@ exports.generateForecast = async (req, res, next) => {
 
     // Generate forecast for each requested crop
     const forecastResults = {};
-    
+
     for (const crop of crops) {
       const forecast = await forecastService.calculateForecast({
         crop,
@@ -50,7 +50,7 @@ exports.generateForecast = async (req, res, next) => {
         weatherData,
         experience
       });
-      
+
       forecastResults[crop] = forecast;
     }
 
@@ -73,16 +73,16 @@ exports.generateForecast = async (req, res, next) => {
 exports.getForecastHistory = async (req, res, next) => {
   try {
     const { userId } = req.params;
-    
+
     if (!userId) {
       return res.status(400).json({
         success: false,
         message: 'User ID is required'
       });
     }
-    
+
     const history = await forecastService.getUserForecastHistory(userId);
-    
+
     return res.status(200).json({
       success: true,
       data: history
@@ -102,16 +102,16 @@ exports.saveForecast = async (req, res, next) => {
   try {
     const { userId } = req.params;
     const forecastData = req.body;
-    
+
     if (!userId || !forecastData) {
       return res.status(400).json({
         success: false,
         message: 'User ID and forecast data are required'
       });
     }
-    
+
     const savedForecast = await forecastService.saveForecastToHistory(userId, forecastData);
-    
+
     return res.status(201).json({
       success: true,
       data: savedForecast
@@ -130,7 +130,7 @@ exports.saveForecast = async (req, res, next) => {
 exports.getAvailableCrops = async (req, res, next) => {
   try {
     const crops = await forecastService.getAvailableCrops();
-    
+
     return res.status(200).json({
       success: true,
       data: crops
@@ -149,7 +149,7 @@ exports.getAvailableCrops = async (req, res, next) => {
 exports.getClimateZones = async (req, res, next) => {
   try {
     const climateZones = await forecastService.getClimateZones();
-    
+
     return res.status(200).json({
       success: true,
       data: climateZones
@@ -168,19 +168,103 @@ exports.getClimateZones = async (req, res, next) => {
 exports.getRegionsByCountry = async (req, res, next) => {
   try {
     const { country } = req.params;
-    
+
     if (!country) {
       return res.status(400).json({
         success: false,
         message: 'Country code is required'
       });
     }
-    
+
     const regions = await forecastService.getRegionsByCountry(country);
-    
+
     return res.status(200).json({
       success: true,
       data: regions
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Get detailed information for a specific region
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next middleware function
+ */
+exports.getRegionDetails = async (req, res, next) => {
+  try {
+    const { country, regionId } = req.params;
+
+    if (!country || !regionId) {
+      return res.status(400).json({
+        success: false,
+        message: 'Country code and region ID are required'
+      });
+    }
+
+    const regionDetails = await forecastService.getRegionDetails(country, regionId);
+
+    return res.status(200).json({
+      success: true,
+      data: regionDetails
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Get subregions for a specific region
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next middleware function
+ */
+exports.getSubregionsByRegion = async (req, res, next) => {
+  try {
+    const { country, regionId } = req.params;
+
+    if (!country || !regionId) {
+      return res.status(400).json({
+        success: false,
+        message: 'Country code and region ID are required'
+      });
+    }
+
+    const subregions = await forecastService.getSubregionsByRegion(country, regionId);
+
+    return res.status(200).json({
+      success: true,
+      data: subregions
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Get detailed information for a specific subregion
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next middleware function
+ */
+exports.getSubregionDetails = async (req, res, next) => {
+  try {
+    const { country, regionId, subregionId } = req.params;
+
+    if (!country || !regionId || !subregionId) {
+      return res.status(400).json({
+        success: false,
+        message: 'Country code, region ID, and subregion ID are required'
+      });
+    }
+
+    const subregionDetails = await forecastService.getSubregionDetails(country, regionId, subregionId);
+
+    return res.status(200).json({
+      success: true,
+      data: subregionDetails
     });
   } catch (error) {
     next(error);

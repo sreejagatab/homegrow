@@ -1,6 +1,3 @@
-# HomeGrow Forecast Tool- Demo
-
-
 # HomeGrow Forecast Tool
 
 ### https://github.com/sreejagatab/homegrow
@@ -79,10 +76,16 @@ CORS_ORIGIN=http://localhost:3000
 4. Start the development servers:
 ```bash
 # Start backend server (from backend directory)
-npm run dev
+npm run server:start
 
 # Start frontend development server (from frontend directory)
 npm start
+```
+
+5. Check server status:
+```bash
+# From backend directory
+node server-status.js
 ```
 
 ### Docker Setup
@@ -144,6 +147,49 @@ The backend provides the following RESTful API endpoints:
 - `POST /api/users/register`: Register a new user
 - `POST /api/users/login`: Log in user
 - `GET /api/users/current`: Get current user
+
+## Troubleshooting
+
+If you encounter issues with the application, we've provided several diagnostic tools:
+
+### MongoDB Connection Issues
+
+Run the MongoDB connection test script:
+```bash
+# From backend directory
+node test-mongodb.js
+```
+
+For detailed troubleshooting steps, see [MongoDB Troubleshooting Guide](mongodb-troubleshooting.md).
+
+### Server Startup Issues
+
+Run the server status script to check your environment:
+```bash
+# From backend directory
+node server-status.js
+```
+
+For detailed troubleshooting steps, see [Server Startup Troubleshooting Guide](server-startup-troubleshooting.md).
+
+### API Connection Issues
+
+Use the API Status component in the frontend to check API connectivity:
+```
+http://localhost:3000/api-status
+```
+
+Or use the API Tester component for more detailed testing:
+```
+import { ApiTester } from './components/ApiTester';
+```
+
+### Docker Testing Environment
+
+To test in an isolated Docker environment:
+```bash
+run-docker-tests.bat
+```
 
 ## Contributing
 

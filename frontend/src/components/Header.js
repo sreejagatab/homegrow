@@ -1,44 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { getCurrentUser, setAuthToken } from '../utils/api';
+import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import '../styles/components/Header.css';
 
 const Header = () => {
-  const [user, setUser] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
-
-  // Check for user on component mount
-  useEffect(() => {
-    const checkUser = async () => {
-      try {
-        const userData = await getCurrentUser();
-        setUser(userData);
-      } catch (error) {
-        // User not logged in, remove any stale token
-        setAuthToken(null);
-      }
-    };
-
-    checkUser();
-  }, []);
-
-  // Handle logout
-  const handleLogout = () => {
-    setAuthToken(null);
-    setUser(null);
-    // Close mobile menu if open
-    setMobileMenuOpen(false);
-  };
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Check if a link is active
-  const isActive = (path) => {
-    return location.pathname === path;
+  // Close mobile menu when a link is clicked
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -56,84 +30,57 @@ const Header = () => {
         <nav className={`nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <ul className="nav-list">
             <li className="nav-item">
-              <Link 
-                to="/" 
-                className={`nav-link ${isActive('/') ? 'active' : ''}`}
-                onClick={() => setMobileMenuOpen(false)}
+              <NavLink
+                to="/"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={closeMobileMenu}
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link 
-                to="/crops" 
-                className={`nav-link ${isActive('/crops') ? 'active' : ''}`}
-                onClick={() => setMobileMenuOpen(false)}
+              <NavLink
+                to="/crops"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={closeMobileMenu}
               >
                 Crop Library
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link 
-                to="/climate-zones" 
-                className={`nav-link ${isActive('/climate-zones') ? 'active' : ''}`}
-                onClick={() => setMobileMenuOpen(false)}
+              <NavLink
+                to="/climate-zones"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={closeMobileMenu}
               >
                 Climate Zones
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link 
-                to="/help" 
-                className={`nav-link ${isActive('/help') ? 'active' : ''}`}
-                onClick={() => setMobileMenuOpen(false)}
+              <NavLink
+                to="/help"
+                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                onClick={closeMobileMenu}
               >
                 Help
-              </Link>
+              </NavLink>
             </li>
-            
-            {user ? (
-              <>
-                <li className="nav-item">
-                  <Link 
-                    to="/dashboard" 
-                    className={`nav-link ${isActive('/dashboard') ? 'active' : ''}`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <button 
-                    className="nav-link btn-link" 
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </button>
-                </li>
-              </>
-            ) : (
-              <>
-                <li className="nav-item auth-item">
-                  <Link 
-                    to="/login" 
-                    className="nav-link btn-login"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Login
-                  </Link>
-                </li>
-                <li className="nav-item auth-item">
-                  <Link 
-                    to="/register" 
-                    className="nav-link btn-register"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Sign Up
-                  </Link>
-                </li>
-              </>
-            )}
+            <li className="nav-item auth-item">
+              <NavLink
+                to="/login"
+                className="login-button"
+                onClick={closeMobileMenu}
+              >
+                Login
+              </NavLink>
+              <NavLink
+                to="/register"
+                className="register-button"
+                onClick={closeMobileMenu}
+              >
+                Sign Up
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>

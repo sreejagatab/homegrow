@@ -1,0 +1,22 @@
+FROM node:16-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy application code
+COPY . .
+
+# Expose port
+EXPOSE 5000
+
+# Create a startup script
+RUN echo "#!/bin/sh\nnode src/server.js &\nsleep 5\nnode test-auth.js\ntail -f /dev/null" > /app/start.sh && \
+    chmod +x /app/start.sh
+
+# Command to run server and tests
+CMD ["/app/start.sh"]

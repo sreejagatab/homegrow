@@ -263,6 +263,19 @@ exports.saveForecastToHistory = async (userId, forecastData) => {
 exports.getAvailableCrops = async () => {
   try {
     const cropsData = JSON.parse(await fs.readFile(CROPS_PATH, 'utf8'));
+
+    // If the file is empty or not an array, return default crops
+    if (!Array.isArray(cropsData) || cropsData.length === 0) {
+      console.log('Crops data is empty or invalid, returning default crops');
+      return [
+        { id: 'tomatoes', name: 'Tomatoes', image: '/images/crops/tomato.jpg' },
+        { id: 'cucumbers', name: 'Cucumbers', image: '/images/crops/cucumber.jpg' },
+        { id: 'bellPeppers', name: 'Bell Peppers', image: '/images/crops/bell-pepper.jpg' },
+        { id: 'eggplant', name: 'Eggplant', image: '/images/crops/eggplant.jpg' },
+        { id: 'hotPeppers', name: 'Hot Peppers', image: '/images/crops/hot-pepper.jpg' }
+      ];
+    }
+
     return cropsData.map(crop => ({
       id: crop.id,
       name: crop.name,
@@ -270,7 +283,14 @@ exports.getAvailableCrops = async () => {
     }));
   } catch (error) {
     console.error(`Error reading available crops: ${error.message}`);
-    throw error;
+    // Return default crops on error
+    return [
+      { id: 'tomatoes', name: 'Tomatoes', image: '/images/crops/tomato.jpg' },
+      { id: 'cucumbers', name: 'Cucumbers', image: '/images/crops/cucumber.jpg' },
+      { id: 'bellPeppers', name: 'Bell Peppers', image: '/images/crops/bell-pepper.jpg' },
+      { id: 'eggplant', name: 'Eggplant', image: '/images/crops/eggplant.jpg' },
+      { id: 'hotPeppers', name: 'Hot Peppers', image: '/images/crops/hot-pepper.jpg' }
+    ];
   }
 };
 
@@ -301,11 +321,11 @@ exports.getRegionsByCountry = async (country) => {
   try {
     const regionsData = JSON.parse(await fs.readFile(REGIONS_PATH, 'utf8'));
     const countryData = regionsData.find(c => c.code === country);
-    
+
     if (!countryData) {
       return [];
     }
-    
+
     return countryData.regions.map(region => ({
       id: region.id,
       name: region.name,
@@ -313,6 +333,120 @@ exports.getRegionsByCountry = async (country) => {
     }));
   } catch (error) {
     console.error(`Error reading regions: ${error.message}`);
+    throw error;
+  }
+};
+
+/**
+ * Get detailed information for a specific region
+ * @param {string} country - Country code
+ * @param {string} regionId - Region ID
+ * @returns {Object} Detailed region information
+ */
+exports.getRegionDetails = async (country, regionId) => {
+  try {
+    const regionsData = JSON.parse(await fs.readFile(REGIONS_PATH, 'utf8'));
+    const countryData = regionsData.find(c => c.code === country);
+
+    if (!countryData) {
+      throw new Error(`Country not found: ${country}`);
+    }
+
+    const region = countryData.regions.find(r => r.id === regionId);
+
+    if (!region) {
+      throw new Error(`Region not found: ${regionId}`);
+    }
+
+    return region;
+  } catch (error) {
+    console.error(`Error reading region details: ${error.message}`);
+    throw error;
+  }
+};
+
+/**
+ * Get subregions for a specific region
+ * @param {string} country - Country code
+ * @param {string} regionId - Region ID
+ * @returns {Array} Subregions
+ */
+exports.getSubregionsByRegion = async (country, regionId) => {
+  try {
+    const region = await this.getRegionDetails(country, regionId);
+
+    // Handle both old and new subregion formats
+    if (Array.isArray(region.subregions) && typeof region.subregions[0] === 'string') {
+      // Old format: array of strings
+      return region.subregions.map(name => ({
+        id: name.toLowerCase().replace(/\s+/g, '-'),
+        name: name
+      }));
+    } else if (Array.isArray(region.subregions) && typeof region.subregions[0] === 'object') {
+      // New format: array of objects
+      return region.subregions.map(subregion => ({
+        id: subregion.id,
+        name: subregion.name,
+        description: subregion.description
+      }));
+    }
+
+    return [];
+  } catch (error) {
+    console.error(`Error reading subregions: ${error.message}`);
+    throw error;
+  }
+};
+
+/**
+ * Get detailed information for a specific subregion
+ * @param {string} country - Country code
+ * @param {string} regionId - Region ID
+ * @param {string} subregionId - Subregion ID
+ * @returns {Object} Detailed subregion information
+ */
+exports.getSubregionDetails = async (country, regionId, subregionId) => {
+  try {
+    const region = await this.getRegionDetails(country, regionId);
+
+    // Handle both old and new subregion formats
+    if (Array.isArray(region.subregions) && typeof region.subregions[0] === 'string') {
+      // Old format: create a basic subregion object
+      const subregionName = region.subregions.find(name =>
+        name.toLowerCase().replace(/\s+/g, '-') === subregionId
+      );
+
+      if (!subregionName) {
+        throw new Error(`Subregion not found: ${subregionId}`);
+      }
+
+      return {
+        id: subregionId,
+        name: subregionName,
+        climateZone: region.climateZone,
+        growingSeasons: region.growingSeasons,
+        averageTemperatures: region.averageTemperatures
+      };
+    } else if (Array.isArray(region.subregions) && typeof region.subregions[0] === 'object') {
+      // New format: find the subregion object
+      const subregion = region.subregions.find(sr => sr.id === subregionId);
+
+      if (!subregion) {
+        throw new Error(`Subregion not found: ${subregionId}`);
+      }
+
+      return {
+        ...subregion,
+        climateZone: region.climateZone,
+        growingSeasons: region.growingSeasons,
+        averageTemperatures: region.averageTemperatures,
+        extremeWeatherEvents: region.extremeWeatherEvents
+      };
+    }
+
+    throw new Error(`Subregion not found: ${subregionId}`);
+  } catch (error) {
+    console.error(`Error reading subregion details: ${error.message}`);
     throw error;
   }
 };
