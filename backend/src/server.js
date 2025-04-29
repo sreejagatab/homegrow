@@ -9,9 +9,8 @@ const path = require('path');
 dotenv.config();
 
 // Import API routes
-const apiRoutes = require('./routes/api');
+const authRoutes = require('./routes/auth');
 const forecastRoutes = require('./routes/forecast');
-const userRoutes = require('./routes/users');
 
 // Initialize Express app
 const app = express();
@@ -25,9 +24,8 @@ app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 // API Routes
-app.use('/api', apiRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/forecast', forecastRoutes);
-app.use('/api/users', userRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
