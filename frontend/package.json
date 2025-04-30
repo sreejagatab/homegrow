@@ -17,7 +17,7 @@
     "web-vitals": "^3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
@@ -42,5 +42,18 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5001"
+  "proxy": "http://localhost:5001",
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(axios|react-router-dom|msw|@bundled-es-modules|@mswjs)/)"
+    ],
+    "moduleNameMapper": {
+      "^axios$": "<rootDir>/node_modules/axios/dist/axios.js"
+    }
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^2.1.0",
+    "jest-fetch-mock": "^3.0.3",
+    "msw": "^2.7.5"
+  }
 }

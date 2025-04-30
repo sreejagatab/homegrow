@@ -153,8 +153,6 @@ const ProductionMetrics = ({ metricsData, area, cropName, environment }) => {
         }
       });
     }
-
-      }
     }, 300); // 300ms delay to ensure DOM is ready
 
     return () => {
@@ -266,8 +264,6 @@ const ProductionMetrics = ({ metricsData, area, cropName, environment }) => {
         }
       });
     }
-
-      }
     }, 300); // 300ms delay to ensure DOM is ready
 
     return () => {

@@ -1,6 +1,6 @@
 /**
  * Forecast Service Tests
- * 
+ *
  * Tests for the forecast service functionality including:
  * - Forecast calculation
  * - Planting calendar generation
@@ -8,7 +8,6 @@
  * - Recommendation generation
  */
 
-const fs = require('fs').promises;
 const path = require('path');
 const forecastService = require('../../src/services/forecastService');
 const dbHelper = require('../helpers/db');
@@ -23,6 +22,9 @@ jest.mock('fs', () => {
     }
   };
 });
+
+// Get the mocked fs.promises
+const fs = require('fs').promises;
 
 // Test data
 const mockCropData = [
@@ -146,7 +148,7 @@ const mockYieldFactors = {
 // Setup mocks before all tests
 beforeAll(async () => {
   // Mock file system responses
-  fs.promises.readFile.mockImplementation((filePath) => {
+  fs.readFile.mockImplementation((filePath) => {
     if (filePath.includes('crops.json')) {
       return Promise.resolve(JSON.stringify(mockCropData));
     } else if (filePath.includes('climates.json')) {
@@ -158,7 +160,7 @@ beforeAll(async () => {
     }
     return Promise.reject(new Error('File not found'));
   });
-  
+
   await dbHelper.connect();
 });
 
@@ -183,10 +185,10 @@ describe('Forecast Service', () => {
         area: 100,
         experience: 'intermediate'
       };
-      
+
       // Execute
       const forecast = await forecastService.calculateForecast(params);
-      
+
       // Assert
       expect(forecast).toBeDefined();
       expect(forecast.cropProfile).toBeDefined();
@@ -197,7 +199,7 @@ describe('Forecast Service', () => {
       expect(forecast.riskFactors).toBeDefined();
       expect(forecast.recommendations).toBeDefined();
     });
-    
+
     it('should throw an error for invalid crop', async () => {
       // Setup
       const params = {
@@ -207,11 +209,11 @@ describe('Forecast Service', () => {
         area: 100,
         experience: 'intermediate'
       };
-      
+
       // Execute and Assert
       await expect(forecastService.calculateForecast(params)).rejects.toThrow();
     });
-    
+
     it('should throw an error for invalid climate', async () => {
       // Setup
       const params = {
@@ -221,11 +223,11 @@ describe('Forecast Service', () => {
         area: 100,
         experience: 'intermediate'
       };
-      
+
       // Execute and Assert
       await expect(forecastService.calculateForecast(params)).rejects.toThrow();
     });
-    
+
     it('should calculate different yields based on environment', async () => {
       // Setup for open environment
       const paramsOpen = {
@@ -235,7 +237,7 @@ describe('Forecast Service', () => {
         area: 100,
         experience: 'intermediate'
       };
-      
+
       // Setup for protected environment
       const paramsProtected = {
         crop: 'tomatoes',
@@ -244,16 +246,16 @@ describe('Forecast Service', () => {
         area: 100,
         experience: 'intermediate'
       };
-      
+
       // Execute
       const forecastOpen = await forecastService.calculateForecast(paramsOpen);
       const forecastProtected = await forecastService.calculateForecast(paramsProtected);
-      
+
       // Assert
       expect(forecastOpen.productionMetrics.totalYield.min).toBeLessThan(forecastProtected.productionMetrics.totalYield.min);
       expect(forecastOpen.productionMetrics.totalYield.max).toBeLessThan(forecastProtected.productionMetrics.totalYield.max);
     });
-    
+
     it('should calculate different yields based on experience', async () => {
       // Setup for beginner
       const paramsBeginner = {
@@ -263,7 +265,7 @@ describe('Forecast Service', () => {
         area: 100,
         experience: 'beginner'
       };
-      
+
       // Setup for advanced
       const paramsAdvanced = {
         crop: 'tomatoes',
@@ -272,16 +274,16 @@ describe('Forecast Service', () => {
         area: 100,
         experience: 'advanced'
       };
-      
+
       // Execute
       const forecastBeginner = await forecastService.calculateForecast(paramsBeginner);
       const forecastAdvanced = await forecastService.calculateForecast(paramsAdvanced);
-      
+
       // Assert
       expect(forecastBeginner.productionMetrics.totalYield.min).toBeLessThan(forecastAdvanced.productionMetrics.totalYield.min);
       expect(forecastBeginner.productionMetrics.totalYield.max).toBeLessThan(forecastAdvanced.productionMetrics.totalYield.max);
     });
-    
+
     it('should scale yield based on area', async () => {
       // Setup for small area
       const paramsSmall = {
@@ -291,7 +293,7 @@ describe('Forecast Service', () => {
         area: 10,
         experience: 'intermediate'
       };
-      
+
       // Setup for large area
       const paramsLarge = {
         crop: 'tomatoes',
@@ -300,22 +302,22 @@ describe('Forecast Service', () => {
         area: 100,
         experience: 'intermediate'
       };
-      
+
       // Execute
       const forecastSmall = await forecastService.calculateForecast(paramsSmall);
       const forecastLarge = await forecastService.calculateForecast(paramsLarge);
-      
+
       // Assert
       expect(forecastSmall.productionMetrics.totalYield.min * 10).toBeCloseTo(forecastLarge.productionMetrics.totalYield.min, 0);
       expect(forecastSmall.productionMetrics.totalYield.max * 10).toBeCloseTo(forecastLarge.productionMetrics.totalYield.max, 0);
     });
   });
-  
+
   describe('getAvailableCrops', () => {
     it('should return a list of available crops', async () => {
       // Execute
       const crops = await forecastService.getAvailableCrops();
-      
+
       // Assert
       expect(crops).toBeDefined();
       expect(Array.isArray(crops)).toBe(true);
@@ -324,26 +326,26 @@ describe('Forecast Service', () => {
       expect(crops[0]).toHaveProperty('name');
       expect(crops[0]).toHaveProperty('image');
     });
-    
+
     it('should handle file read errors', async () => {
       // Setup - mock a file read error
       fs.promises.readFile.mockRejectedValueOnce(new Error('File read error'));
-      
+
       // Execute
       const crops = await forecastService.getAvailableCrops();
-      
+
       // Assert
       expect(crops).toBeDefined();
       expect(Array.isArray(crops)).toBe(true);
       expect(crops.length).toBe(5); // Default crops
     });
   });
-  
+
   describe('getClimateZones', () => {
     it('should return a list of climate zones', async () => {
       // Execute
       const climateZones = await forecastService.getClimateZones();
-      
+
       // Assert
       expect(climateZones).toBeDefined();
       expect(Array.isArray(climateZones)).toBe(true);
@@ -352,21 +354,21 @@ describe('Forecast Service', () => {
       expect(climateZones[0]).toHaveProperty('name');
       expect(climateZones[0]).toHaveProperty('description');
     });
-    
+
     it('should throw an error if climate data cannot be read', async () => {
       // Setup - mock a file read error
       fs.promises.readFile.mockRejectedValueOnce(new Error('File read error'));
-      
+
       // Execute and Assert
       await expect(forecastService.getClimateZones()).rejects.toThrow();
     });
   });
-  
+
   describe('getUserForecastHistory', () => {
     it('should return mock forecast history for a user', async () => {
       // Execute
       const history = await forecastService.getUserForecastHistory('user123');
-      
+
       // Assert
       expect(history).toBeDefined();
       expect(Array.isArray(history)).toBe(true);
@@ -376,7 +378,7 @@ describe('Forecast Service', () => {
       expect(history[0]).toHaveProperty('params');
     });
   });
-  
+
   describe('saveForecastToHistory', () => {
     it('should save a forecast to user history', async () => {
       // Setup
@@ -395,10 +397,10 @@ describe('Forecast Service', () => {
           }
         }
       };
-      
+
       // Execute
       const savedForecast = await forecastService.saveForecastToHistory(userId, forecastData);
-      
+
       // Assert
       expect(savedForecast).toBeDefined();
       expect(savedForecast.id).toBeDefined();

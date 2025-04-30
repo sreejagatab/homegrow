@@ -57,7 +57,8 @@ const ApiStatus = () => {
       }
 
       // Only check other endpoints if server is online
-      if (apiStatus.server === 'online') {
+      const currentStatus = apiStatus.server;
+      if (currentStatus === 'online') {
         // Check crops endpoint
         try {
           await axios.get('/api/forecast/crops', { timeout: 5000 });
@@ -75,7 +76,7 @@ const ApiStatus = () => {
           console.error('Climate zones API test failed:', error);
           setApiStatus(prev => ({ ...prev, climateZones: 'offline' }));
         }
-      } else {
+      } else if (currentStatus === 'offline') {
         // If server is offline, mark all endpoints as offline
         setApiStatus(prev => ({
           ...prev,
@@ -86,7 +87,7 @@ const ApiStatus = () => {
     };
 
     checkApiStatus();
-  }, [apiStatus.server]);
+  }, []);
 
   return (
     <div className="api-status-container">

@@ -19,18 +19,18 @@ const rateLimiter = (options = {}) => {
   const windowMs = options.windowMs || 15 * 60 * 1000; // 15 minutes by default
   const maxRequests = options.maxRequests || 100; // 100 requests per windowMs by default
   const blockDuration = options.blockDuration || 60 * 60 * 1000; // 1 hour by default
-  
+
   // Clean up old entries periodically
   setInterval(() => {
     const now = Date.now();
-    
+
     // Clean up request counts
     for (const [ip, data] of ipRequestCounts.entries()) {
       if (now - data.startTime > windowMs) {
         ipRequestCounts.delete(ip);
       }
     }
-    
+
     // Clean up block list
     for (const [ip, blockUntil] of ipBlockList.entries()) {
       if (now > blockUntil) {
@@ -38,11 +38,16 @@ const rateLimiter = (options = {}) => {
       }
     }
   }, windowMs);
-  
+
   return (req, res, next) => {
+    // Skip rate limiting in test environment
+    if (process.env.NODE_ENV === 'test') {
+      return next();
+    }
+
     const ip = req.ip || req.connection.remoteAddress;
     const now = Date.now();
-    
+
     // Check if IP is blocked
     if (ipBlockList.has(ip)) {
       const blockUntil = ipBlockList.get(ip);
@@ -57,7 +62,7 @@ const rateLimiter = (options = {}) => {
         ipBlockList.delete(ip);
       }
     }
-    
+
     // Initialize or update request count
     if (!ipRequestCounts.has(ip)) {
       ipRequestCounts.set(ip, {
@@ -66,7 +71,7 @@ const rateLimiter = (options = {}) => {
       });
     } else {
       const data = ipRequestCounts.get(ip);
-      
+
       // Reset if window has passed
       if (now - data.startTime > windowMs) {
         data.count = 1;
@@ -74,7 +79,7 @@ const rateLimiter = (options = {}) => {
       } else {
         data.count += 1;
       }
-      
+
       // Block IP if too many requests
       if (data.count > maxRequests) {
         ipBlockList.set(ip, now + blockDuration);
@@ -84,7 +89,7 @@ const rateLimiter = (options = {}) => {
         });
       }
     }
-    
+
     next();
   };
 };

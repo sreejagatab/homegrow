@@ -103,8 +103,11 @@ export const getRegions = async (country) => {
 export const getForecastHistory = async (userId) => {
   try {
     const response = await api.get(`/forecast/history/${userId}`);
+    // Log the response for debugging
+    console.log('API getForecastHistory response:', response);
     return response.data;
   } catch (error) {
+    console.error('Error in getForecastHistory:', error);
     throw handleApiError(error);
   }
 };

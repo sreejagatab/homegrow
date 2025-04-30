@@ -56,6 +56,9 @@ const SavedForecasts = () => {
     );
   }
 
+  // Ensure forecastHistory is an array
+  const safeHistory = Array.isArray(forecastHistory) ? forecastHistory : [];
+
   return (
     <div className="saved-forecasts-container">
       <div className="saved-forecasts-header">
@@ -63,7 +66,7 @@ const SavedForecasts = () => {
         <p>View and manage your previously saved crop forecasts</p>
       </div>
 
-      {forecastHistory.length === 0 ? (
+      {safeHistory.length === 0 ? (
         <div className="empty-state">
           <h2>No Saved Forecasts</h2>
           <p>You haven't saved any forecasts yet. Generate a forecast to get started!</p>
@@ -71,39 +74,43 @@ const SavedForecasts = () => {
         </div>
       ) : (
         <div className="forecasts-list">
-          {forecastHistory.map((forecast) => (
-            <div key={forecast.id} className="forecast-card">
+          {safeHistory.map((forecast) => (
+            <div key={forecast?.id || Math.random()} className="forecast-card">
               <div className="forecast-card-header">
-                <h3>{forecast.name || 'Unnamed Forecast'}</h3>
-                <span className="forecast-date">{formatDate(forecast.createdAt)}</span>
+                <h3>{forecast?.name || 'Unnamed Forecast'}</h3>
+                <span className="forecast-date">
+                  {forecast?.createdAt ? formatDate(forecast.createdAt) : 'Unknown date'}
+                </span>
               </div>
 
               <div className="forecast-details">
                 <div className="forecast-detail">
                   <span className="detail-label">Climate:</span>
-                  <span className="detail-value">{forecast.params.climate}</span>
+                  <span className="detail-value">{forecast?.params?.climate || 'Not specified'}</span>
                 </div>
 
                 <div className="forecast-detail">
                   <span className="detail-label">Environment:</span>
-                  <span className="detail-value">{forecast.params.environment}</span>
+                  <span className="detail-value">{forecast?.params?.environment || 'Not specified'}</span>
                 </div>
 
                 <div className="forecast-detail">
                   <span className="detail-label">Area:</span>
-                  <span className="detail-value">{forecast.params.area} m²</span>
+                  <span className="detail-value">{forecast?.params?.area ? `${forecast.params.area} m²` : 'Not specified'}</span>
                 </div>
 
                 <div className="forecast-detail">
                   <span className="detail-label">Crops:</span>
                   <span className="detail-value">
-                    {forecast.crops.map(crop => crop.name).join(', ')}
+                    {Array.isArray(forecast?.crops)
+                      ? forecast.crops.map(crop => crop?.name || crop).join(', ')
+                      : 'No crops specified'}
                   </span>
                 </div>
               </div>
 
               <div className="forecast-card-actions">
-                <Link to={`/forecast/${forecast.id}`} className="btn-secondary">
+                <Link to={`/forecast/${forecast?.id || '#'}`} className="btn-secondary">
                   View Details
                 </Link>
               </div>

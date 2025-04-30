@@ -108,11 +108,26 @@ export const ForecastProvider = ({ children }) => {
   const loadForecastHistory = async (userId) => {
     try {
       setLoading(true);
-      const history = await getForecastHistory(userId);
-      setForecastHistory(history);
+      const response = await getForecastHistory(userId);
+
+      // Log the response for debugging
+      console.log('ForecastContext loadForecastHistory response:', response);
+
+      // Make sure we're setting an array to state
+      // The API returns { data: [...] } structure
+      if (response && response.data && Array.isArray(response.data)) {
+        setForecastHistory(response.data);
+      } else if (Array.isArray(response)) {
+        setForecastHistory(response);
+      } else {
+        console.error('Invalid forecast history format:', response);
+        setForecastHistory([]);
+      }
     } catch (err) {
       console.error('Error loading forecast history:', err);
       setError('Failed to load forecast history');
+      // Initialize with empty array on error
+      setForecastHistory([]);
     } finally {
       setLoading(false);
     }

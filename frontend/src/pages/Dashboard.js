@@ -22,11 +22,19 @@ const Dashboard = () => {
     const fetchForecastHistory = async () => {
       try {
         setLoading(true);
-        const history = await getForecastHistory(user.id);
-        setForecastHistory(history);
+        const response = await getForecastHistory(user.id);
+        // Make sure we're setting an array to state
+        // The API returns { data: [...] } structure
+        setForecastHistory(Array.isArray(response.data) ? response.data : []);
+
+        // Log for debugging
+        console.log('Forecast history response:', response);
+        console.log('Forecast history data type:', typeof response.data, Array.isArray(response.data));
       } catch (err) {
         setError('Failed to load forecast history. Please try again later.');
         console.error('Error fetching forecast history:', err);
+        // Initialize with empty array on error
+        setForecastHistory([]);
       } finally {
         setLoading(false);
       }
@@ -125,28 +133,32 @@ const Dashboard = () => {
               </div>
             ) : (
               <div className="forecast-history">
-                {forecastHistory.map((forecast) => (
-                  <div key={forecast.id} className="forecast-card">
+                {Array.isArray(forecastHistory) ? forecastHistory.map((forecast) => (
+                  <div key={forecast?.id || Math.random()} className="forecast-card">
                     <div className="forecast-info">
-                      <h3>{forecast.name || 'Unnamed Forecast'}</h3>
+                      <h3>{forecast?.name || 'Unnamed Forecast'}</h3>
                       <p className="forecast-date">
-                        Created on {new Date(forecast.createdAt).toLocaleDateString()}
+                        Created on {forecast?.createdAt ? new Date(forecast.createdAt).toLocaleDateString() : 'Unknown date'}
                       </p>
                       <div className="forecast-crops">
-                        {forecast.crops.map((crop) => (
+                        {Array.isArray(forecast?.crops) ? forecast.crops.map((crop) => (
                           <span key={crop} className="crop-tag">
                             {crop}
                           </span>
-                        ))}
+                        )) : (
+                          <span className="crop-tag">No crops specified</span>
+                        )}
                       </div>
                     </div>
                     <div className="forecast-actions">
-                      <Link to={`/forecast/${forecast.id}`} className="view-button">
+                      <Link to={`/forecast/${forecast?.id || '#'}`} className="view-button">
                         View
                       </Link>
                     </div>
                   </div>
-                ))}
+                )) : (
+                  <div className="error-message">Invalid forecast data received</div>
+                )}
               </div>
             )}
           </div>

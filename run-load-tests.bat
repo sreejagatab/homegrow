@@ -4,7 +4,7 @@ echo ====================================
 echo.
 
 REM Check if Artillery is installed
-npx artillery -V > nul 2>&1
+where artillery >nul 2>nul
 if %ERRORLEVEL% NEQ 0 (
     echo Artillery is not installed. Installing...
     npm install -g artillery
@@ -21,10 +21,10 @@ timeout /t 10 /nobreak > nul
 echo Running load tests...
 echo.
 cd ..
-npx artillery run load-test.yml -o load-test-report.json
+artillery run load-test.yml -o load-test-report.json
 
 echo Generating HTML report...
-npx artillery report load-test-report.json
+artillery report load-test-report.json
 
 echo Load testing completed.
 echo HTML report generated at load-test-report.html
